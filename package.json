@@ -1,7 +1,7 @@
 {
   "name": "myeportfolio",
   "version": "0.1.0",
-  "homepage": "./",
+  "homepage": "https://sudhanva1999.github.io/profile-portfolio",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
