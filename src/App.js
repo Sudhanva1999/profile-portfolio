@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
 import About from './components/about/About';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './components/contact/Contact';
 import Skills from './components/skills/Skills';
 
