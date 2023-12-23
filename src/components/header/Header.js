@@ -27,27 +27,27 @@ function Header() {
       </Link>
       <ul className={active}>
         <li className="nav__item">
-          <Link to="/" className="nav__link" onClick={closeMenu}>
+          <Link to="/profile-portfolio" className="nav__link" onClick={closeMenu}>
             Home
           </Link>
         </li>
         <li className="nav__item">
-          <Link to="/about" className="nav__link" onClick={closeMenu}>
+          <Link to="/profile-portfolio/about" className="nav__link" onClick={closeMenu}>
             About
           </Link>
         </li>
         <li className="nav__item">
-          <Link to="/projects" className="nav__link" onClick={closeMenu}>
+          <Link to="/profile-portfolio/projects" className="nav__link" onClick={closeMenu}>
             Projects
           </Link>
         </li>
         <li className="nav__item">
-          <Link to="/skills" className="nav__link" onClick={closeMenu}>
+          <Link to="/profile-portfolio/skills" className="nav__link" onClick={closeMenu}>
             Skills
           </Link>
         </li>
         <li className="nav__item">
-          <Link to="/contact" className="nav__link" onClick={closeMenu}>
+          <Link to="/profile-portfolio/contact" className="nav__link" onClick={closeMenu}>
             Contact
           </Link>
         </li>

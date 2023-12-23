@@ -14,11 +14,11 @@ class App extends Component {
         <div className="App">
           <Header />
           <Routes>
-            <Route path="https://sudhanva1999.github.io/profile-portfolio/" element={<Profile />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Header />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/profile-portfolio" element={<Profile />} />
+            <Route path="/profile-portfolio/about" element={<About />} />
+            <Route path="/profile-portfolio/projects" element={<Header />} />
+            <Route path="/profile-portfolio/skills" element={<Skills />} />
+            <Route path="/profile-portfolio/contact" element={<Contact />} />
           </Routes>
         </div>
       </HashRouter>
