@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "./static/css/main.77354328.css",
-    "main.js": "./static/js/main.ce357773.js",
-    "static/media/profile1.png": "./static/media/profile1.c452d4cad43d6c5f6331.png",
-    "static/media/javaservletsicon.png": "./static/media/javaservletsicon.ca34226ff3be2f6c5fa9.png",
-    "static/media/flaskicon.png": "./static/media/flaskicon.adf650138d621769ee82.png",
-    "static/media/ycceicon.png": "./static/media/ycceicon.49acb35823218cac8476.png",
-    "static/media/utechicon.png": "./static/media/utechicon.d4e8e3594ae4037031fd.png",
-    "static/media/sudhanvaResume.pdf": "./static/media/sudhanvaResume.9c3ce69a65e595f61952.pdf",
-    "static/media/neuicon.png": "./static/media/neuicon.900748d60353d9c3df08.png",
-    "static/media/opencvicon.png": "./static/media/opencvicon.1461a22bfaccdb6261c6.png",
-    "static/media/instagramicon.png": "./static/media/instagramicon.e719d8b29f452a16302d.png",
-    "static/media/electronicon.png": "./static/media/electronicon.6df65b1143312f4b1abb.png",
-    "static/media/accentureicon.png": "./static/media/accentureicon.b5019c426c3b02fe3699.png",
-    "static/media/realtimeicon.png": "./static/media/realtimeicon.8c4a9cb88021ee8e9b7e.png",
-    "static/media/linkedinicon.png": "./static/media/linkedinicon.d21b834035baa551e886.png",
-    "static/media/splunkicon.png": "./static/media/splunkicon.964f849b15c028994192.png",
-    "static/media/emailicon.png": "./static/media/emailicon.067300a18ba19b7da4b0.png",
-    "static/media/phoneicon.png": "./static/media/phoneicon.df4bdca0129656579ff8.png",
-    "static/media/githubicon.png": "./static/media/githubicon.0c260fc0688c00cced14.png",
-    "index.html": "./index.html",
-    "main.77354328.css.map": "./static/css/main.77354328.css.map",
-    "main.ce357773.js.map": "./static/js/main.ce357773.js.map"
+    "main.css": "/profile-portfolio/static/css/main.77354328.css",
+    "main.js": "/profile-portfolio/static/js/main.a89f661b.js",
+    "static/media/profile1.png": "/profile-portfolio/static/media/profile1.c452d4cad43d6c5f6331.png",
+    "static/media/javaservletsicon.png": "/profile-portfolio/static/media/javaservletsicon.ca34226ff3be2f6c5fa9.png",
+    "static/media/flaskicon.png": "/profile-portfolio/static/media/flaskicon.adf650138d621769ee82.png",
+    "static/media/ycceicon.png": "/profile-portfolio/static/media/ycceicon.49acb35823218cac8476.png",
+    "static/media/utechicon.png": "/profile-portfolio/static/media/utechicon.d4e8e3594ae4037031fd.png",
+    "static/media/sudhanvaResume.pdf": "/profile-portfolio/static/media/sudhanvaResume.9c3ce69a65e595f61952.pdf",
+    "static/media/neuicon.png": "/profile-portfolio/static/media/neuicon.900748d60353d9c3df08.png",
+    "static/media/opencvicon.png": "/profile-portfolio/static/media/opencvicon.1461a22bfaccdb6261c6.png",
+    "static/media/instagramicon.png": "/profile-portfolio/static/media/instagramicon.e719d8b29f452a16302d.png",
+    "static/media/electronicon.png": "/profile-portfolio/static/media/electronicon.6df65b1143312f4b1abb.png",
+    "static/media/accentureicon.png": "/profile-portfolio/static/media/accentureicon.b5019c426c3b02fe3699.png",
+    "static/media/realtimeicon.png": "/profile-portfolio/static/media/realtimeicon.8c4a9cb88021ee8e9b7e.png",
+    "static/media/linkedinicon.png": "/profile-portfolio/static/media/linkedinicon.d21b834035baa551e886.png",
+    "static/media/splunkicon.png": "/profile-portfolio/static/media/splunkicon.964f849b15c028994192.png",
+    "static/media/emailicon.png": "/profile-portfolio/static/media/emailicon.067300a18ba19b7da4b0.png",
+    "static/media/phoneicon.png": "/profile-portfolio/static/media/phoneicon.df4bdca0129656579ff8.png",
+    "static/media/githubicon.png": "/profile-portfolio/static/media/githubicon.0c260fc0688c00cced14.png",
+    "index.html": "/profile-portfolio/index.html",
+    "main.77354328.css.map": "/profile-portfolio/static/css/main.77354328.css.map",
+    "main.a89f661b.js.map": "/profile-portfolio/static/js/main.a89f661b.js.map"
   },
   "entrypoints": [
     "static/css/main.77354328.css",
-    "static/js/main.ce357773.js"
+    "static/js/main.a89f661b.js"
   ]
 }
