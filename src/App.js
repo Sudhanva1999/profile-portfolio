@@ -3,14 +3,14 @@ import './App.css';
 import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
 import About from './components/about/About';
-import { HashRouter as  Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './components/contact/Contact';
 import Skills from './components/skills/Skills';
 
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <Router>
         <div className="App">
           <Header />
           <Routes>
@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/profile-portfolio/contact" element={<Contact />} />
           </Routes>
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
