@@ -20,7 +20,7 @@
 .text-line {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: dash 3s linear forwards, filling 2s ease-in forwards;
+  animation: dash 3s linear forwards infinite;
   font-size: 80px;
 }
 
@@ -106,7 +106,6 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    font-weight: 900;
   }
   
   .download-button:hover {
@@ -141,7 +140,6 @@
     .social-icon {
         width: 30px;
         height: 30px;
-        transition: transform 0.2s ease-in-out; 
       }
 
       .download-button {
