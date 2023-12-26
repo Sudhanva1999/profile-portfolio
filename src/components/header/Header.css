@@ -42,6 +42,7 @@ a {
   align-items: center;
   justify-content: space-around;
   gap: 3rem;
+  z-index: 99;
 }
 
 .nav__link {
@@ -51,6 +52,7 @@ a {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+  z-index: 99;
 }
 
 .nav__link:hover {
@@ -89,12 +91,12 @@ a {
   }
 }
 
-/* Active Class */
+
 .nav__active {
   transform: translateX(0%);
 }
 
-/* Toggle Icon Animation */
+
 .toggle .line1 {
   transform: rotate(-45deg) translate(-4px, 5px);
 }

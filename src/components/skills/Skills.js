@@ -7,6 +7,9 @@ import servletIcon from '../../resources/skillIcons/javaservletsicon.png'
 import electronIcon from '../../resources/skillIcons/electronicon.png'
 import realtimeIcon from '../../resources/skillIcons/realtimeicon.png'
 import splunkIcon from '../../resources/skillIcons/splunkicon.png'
+import htmlicon from '../../resources/skillIcons/htmlicon.png'
+import cssicon from '../../resources/skillIcons/cssicon.png'
+
 
 
 const SkillItem = ({ skill, level }) => {
@@ -57,6 +60,14 @@ const Skills = () => {
             <img className='skillIcon roundIcon' width="48" height="48" src="https://img.icons8.com/color/48/javascript--v1.png" alt="javascript--v1"/>
             <SkillItem skill="Javascript" level={70} />
         </div>
+        <div className='iconContainer'>
+        <img className='skillIcon roundIcon' width="48" height="48" src={htmlicon} alt="htmlicon"/>
+            <SkillItem skill="HTML" level={90} />
+        </div>
+        <div className='iconContainer'>
+        <img className='skillIcon roundIcon' width="48" height="48" src={cssicon} alt="cssicon"/>
+            <SkillItem skill="CSS" level={90} />
+        </div>
       </div>
 
       <div className="skills-category fromRight">
@@ -92,14 +103,6 @@ const Skills = () => {
         <div className='iconContainer'>
             <img className='skillIcon' width="48" height="48" src="https://img.icons8.com/color/48/spring-logo.png" alt="spring-logo"/>
             <SkillItem skill="Spring Boot" level={80} />
-        </div>
-        <div className='iconContainer'>
-            <img className='skillIcon' width="48" height="48" src="https://img.icons8.com/color/48/bootstrap--v2.png" alt="bootstrap--v2"/>
-            <SkillItem skill="Bootstrap" level={80} />
-        </div>
-        <div className='iconContainer'>
-            <img className='roundIcon skillIcon' width="48" height="48" src={opencvIcon} alt="opencvIcon"/>
-            <SkillItem skill="OpenCV" level={60} />
         </div>
       </div>
 
@@ -160,6 +163,14 @@ const Skills = () => {
         <div className='iconContainer'>
         <img className='skillIcon roundIcon' width="48" height="48" src={splunkIcon} alt="splunkIcon"/>
         <SkillItem skill="Splunk" level={65} />
+        </div>
+        <div className='iconContainer'>
+            <img className='skillIcon' width="48" height="48" src="https://img.icons8.com/color/48/bootstrap--v2.png" alt="bootstrap--v2"/>
+            <SkillItem skill="Bootstrap" level={80} />
+        </div>
+        <div className='iconContainer'>
+            <img className='roundIcon skillIcon' width="48" height="48" src={opencvIcon} alt="opencvIcon"/>
+            <SkillItem skill="OpenCV" level={60} />
         </div>
       </div>
     </div>

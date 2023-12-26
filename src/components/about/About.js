@@ -8,6 +8,7 @@ import neuIcon from '../../resources/neuicon.png';
 import accentureIcon from '../../resources/accentureicon.png';
 import utechIcon from '../../resources/utechicon.png';
 import adobeIcon from '../../resources/adobeicon.png';
+import callicon from '../../resources/techicon/callgif.gif'
 
 const PopupContent = ({ content }) => {
     return (
@@ -96,7 +97,8 @@ const About = () => {
 
   return (
     <div className="about-container">
-       <h1>About Me</h1>
+       <h1>About Me </h1>
+    
       <div className="about-content">
         <section className="about-section">
           <div className="about-entry fromLeft">
