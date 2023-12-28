@@ -1,4 +1,3 @@
-/* Projects.css */
 
 .projects-container {
     background-color: #1c1c1c;
@@ -51,8 +50,7 @@
     background-color: #2b2b2b;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    height: 1000px;
-    position: relative; /* Ensure relative positioning for absolute positioning within */
+    position: relative; 
 text-align: left;
   }
   
@@ -60,7 +58,7 @@ text-align: left;
   .project-icons svg {
     width: 100%;
     font-size: 24px;
-    color: #3498db; /* Change the color based on your preference */
+    color: #3498db;
   }
   
   .project-section h2 {
