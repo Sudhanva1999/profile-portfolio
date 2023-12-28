@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 import Carousel from '../projectslides/Carousel';
@@ -15,6 +15,8 @@ import phpicon from '../../resources/skillIcons/phpicon.png'
 import firebaseicon from '../../resources/skillIcons/realtimeicon.png'
 import sqlicon from '../../resources/skillIcons/sqlicon.png'
 import giticon from '../../resources/skillIcons/githubicon.png'
+import springicon from '../../resources/skillIcons/springicon.png'
+
 
 
 import javaimg1 from '../../resources/projectimages/1_java/1_java.png'
@@ -39,10 +41,10 @@ import fakeNewsImg1 from '../../resources/projectimages/5_fakeNews/fakenews_1.pn
 import fakeNewsImg2 from '../../resources/projectimages/5_fakeNews/fakenews_2.png'
 import fakeNewsImg3 from '../../resources/projectimages/5_fakeNews/fakenews_3.png'
 
-
-
-
-
+import expense1 from '../../resources/projectimages/expense/expense_1.png'
+import expense2 from '../../resources/projectimages/expense/expense_2.png'
+import expense3 from '../../resources/projectimages/expense/expense_3.png'
+import expense4 from '../../resources/projectimages/expense/expense_4.png'
 
 import './Projects.css';
 
@@ -71,12 +73,20 @@ const portalimgs = [
 ];
 
 const fakeNewsImg = [
-    <img className='project-slides' key={3} src={fakeNewsImg1} alt="Slide 3" />,
-    <img className='project-slides' key={1} src={fakeNewsImg2} alt="Slide 1" />,
-    <img className='project-slides' key={2} src={fakeNewsImg3} alt="Slide 2" />,
+    <img className='project-slides' key={1} src={fakeNewsImg1} alt="Slide 3" />,
+    <img className='project-slides' key={2} src={fakeNewsImg2} alt="Slide 1" />,
+    <img className='project-slides' key={3} src={fakeNewsImg3} alt="Slide 2" />,
+];
+
+const expenseImg = [
+    <img className='project-slides' key={1} src={expense1} alt="Slide 3" />,
+    <img className='project-slides' key={2} src={expense2} alt="Slide 1" />,
+    <img className='project-slides' key={3} src={expense3} alt="Slide 2" />,
+    <img className='project-slides' key={4} src={expense4} alt="Slide 4" />,
 ];
 
 const Projects = () => {
+    
     const scrollToProject = (projectId) => {
         const element = document.getElementById(projectId);
         if (element) {
@@ -89,18 +99,19 @@ const Projects = () => {
     };
 
     return (
+        <div className='bodyContainerProject'>
         <div className="projects-container">
             <h1>My Projects</h1>
             <h3>Click for details !</h3><br />
             <div className="project-list">
-                <div className="project-name" onClick={() => scrollToProject('project1')}>
+                <div className="project-name fromLeft" onClick={() => scrollToProject('project1')}>
                     Image Processing Software
                     <div>
                         <img className="actual-icon" src={javaicon} />
                     </div>
 
                 </div>
-                <div className="project-name" onClick={() => scrollToProject('project2')}>
+                <div className="project-name fromRight" onClick={() => scrollToProject('project2')}>
                     React Based Complex Team Management Tool
                     <div>
                         <img className="actual-icon" src={reacticon} />
@@ -110,7 +121,7 @@ const Projects = () => {
                         <img className="actual-icon" src={firebaseicon} />
                     </div>
                 </div>
-                <div className="project-name" onClick={() => scrollToProject('project3')}>
+                <div className="project-name fromLeft" onClick={() => scrollToProject('project3')}>
                     RNN Based Handwriting Recognizer and Analysis Tool
                     <div>
                         <img className="actual-icon" src={pythonicon} />
@@ -121,7 +132,18 @@ const Projects = () => {
                     </div>
 
                 </div>
-                <div className="project-name" onClick={() => scrollToProject('project4')}>
+                <div className="project-name fromRight" onClick={() => scrollToProject('bostonexpense')}>
+                    Expense Tracker App
+                    <div>
+                        <img className="actual-icon" src={pythonicon} />
+                        <img className="actual-icon" src={flaskicon} />
+                        <img className="actual-icon" src={htmlicon} />
+                        <img className="actual-icon" src={cssicon} />
+                        <img className="actual-icon" src={booticon} />
+                        <img className="actual-icon" src={firebaseicon} />
+                    </div>
+                </div>
+                <div className="project-name fromLeft" onClick={() => scrollToProject('project4')}>
                     Paper Presentation Conference Portal
                     <div>
                         <img className="actual-icon" src={phpicon} />
@@ -132,7 +154,7 @@ const Projects = () => {
                     </div>
 
                 </div>
-                <div className="project-name" onClick={() => scrollToProject('project5')}>
+                <div className="project-name fromRight" onClick={() => scrollToProject('project5')}>
                     CNN based Fake News Detector
                     <div>
                         <img className="actual-icon" src={pythonicon} />
@@ -141,17 +163,18 @@ const Projects = () => {
                         <img className="actual-icon" src={booticon} />
                     </div>
                 </div>
-                <div className="project-name" onClick={() => scrollToProject('reactjava')}>
+                <div className="project-name fromLeft" onClick={() => scrollToProject('reactjava')}>
                     Moview Review Board (A JAVA-REACT Communication POC)
                     <div>
                         <img className="actual-icon" src={javaicon} />
                         <img className="actual-icon" src={reacticon} />
+                        <img className="actual-icon" src={springicon} />
                         <img className="actual-icon" src={htmlicon} />
                         <img className="actual-icon" src={cssicon} />
                         <img className="actual-icon" src={booticon} />
                     </div>
                 </div>
-                <div className="project-name" onClick={() => scrollToProject('project6')}>
+                <div className="project-name fromRight" onClick={() => scrollToProject('project6')}>
                     Client Host Multimedia Player
                     <div>
                         <img className="actual-icon" src={pythonicon} />
@@ -160,7 +183,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div className="project-name">
+                <div className="project-name fromLeft">
                     This Site !
                     <div>
                         <img className="actual-icon" src={reacticon} />
@@ -291,6 +314,46 @@ const Projects = () => {
                 </div>
             </div>
 
+            <div id="bostonexpense" className="project-section">
+                <h2>
+                    Expense Tracker App
+                    <button className="back-to-top" onClick={scrollToTop}>
+                        Back to Top
+                    </button>
+                </h2>
+                <div>
+                    <Carousel slides={expenseImg} />
+                    <div>
+                        <br />
+                        <h3>
+                            <strong>
+                                What the project is about:
+                            </strong>
+                        </h3>
+                        <p>
+                        The Expense Tracker Web App is a robust Flask-based application designed to streamline expense 
+                        tracking and debt management among user groups. Notably, the application integrates 
+                        Google Authentication through Firebase, providing a secure and convenient login process
+                        for users. This proof-of-concept project aims to offer an intuitive platform for users to 
+                        log in, add expenses, view a comprehensive dashboard summarizing debts, and generate 
+                        insightful reports based on various filters.
+                        </p>
+                        <br />
+                        <p>
+                            <strong>Key Features:</strong> <br />
+                            - Google Authentication Integration : Leveraging Firebase Authentication, the app ensures secure user login using Google credentials, enhancing user trust and ease of access.<br/>
+                            - Dashboard Overview : The dashboard provides users with a clear and concise overview of debts and credits, presenting the total amount owed and owed to the user.<br/>
+                            - Expense Management : Users can effortlessly add new expenses, specifying details such as the item, amount, and participants. The app dynamically updates balances to reflect changes accurately.<br/>
+                            - Comprehensive Reports : The app empowers users to generate detailed reports based on various filters, including search queries, specific months, years, and transactions paid by a particular user.<br/>
+                            - Balanced Deletion Logs : Users have the flexibility to delete specific expense logs, and the app intelligently adjusts balances, ensuring accurate and up-to-date financial records.
+                            <br/><br/>
+                            Hosted Site: <a href='https://bostonexpense.onrender.com/' target='_blank'> Find the website here !</a> <br/>
+                            (The site is hosted on a free service so give it time to load !)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div id="project4" className="project-section">
                 <h2>
                     Paper Presentation Conference Portal
@@ -366,6 +429,45 @@ const Projects = () => {
                 </div>
             </div>
 
+            <div id="reactjava" className="project-section">
+                <h2>
+                    Moview Review Board (A JAVA-REACT Communication POC)
+                    <button className="back-to-top" onClick={scrollToTop}>
+                        Back to Top
+                    </button>
+                </h2>
+                <div>
+                    <div>
+                        <br />
+                        <h3>
+                            <strong>
+                                What the project is about:
+                            </strong>
+                        </h3>
+                        <p>
+                        The Movie Review Web Application serves as a compelling proof of concept, showcasing 
+                        the seamless integration of Java Spring Boot on the backend with React on the
+                         frontend through RESTful APIs. This application provides innovative user 
+                         experience by offering a platform where users can effortlessly explore movies, contribute 
+                         reviews, and access dynamic movie ratings. The project's focal point lies in establishing
+                          efficient communication channels between Java Spring Boot and React, laying the 
+                          foundation for robust and scalable full-stack applications.
+                        
+                        </p>
+                        <br />
+                        <p>
+                            <strong>Key Features:</strong> <br />
+                            - Java-React Communication Excellence : Demonstrate a flawless communication mechanism between Java Spring Boot and React, highlighting the versatility and potential for creating sophisticated full-stack applications.<br />
+                            - Interactive Review System : Provide users with an interactive platform to contribute reviews, leveraging the synergies between Java Spring Boot and React to ensure a smooth and responsive review submission process.<br />
+                            - Java Spring Boot Backend Expertise : Utilize Java Spring Boot as the backend technology, showcasing its prowess in handling backend functionalities, including data processing, storage, and intricate business logic.<br />
+                            - React Frontend Excellence : Develop a feature-rich and responsive frontend using React, emphasizing its role in creating a dynamic and engaging user interface that seamlessly communicates with the Java backend.<br />
+                            - RESTful API Prowess : Emphasize the robustness of RESTful APIs in facilitating smooth data exchange between Java Spring Boot and React, a key factor in the success of this proof of concept.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
             <div id="project6" className="project-section">
                 <h2>
                     Client Host Media Controller
@@ -401,14 +503,10 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
 
 
-
+        </div>
 
     );
 };

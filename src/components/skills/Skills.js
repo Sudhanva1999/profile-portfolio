@@ -35,7 +35,8 @@ const SkillItem = ({ skill, level }) => {
 
 const Skills = () => {
   return (
-    <div className="skills-container ">
+    <div className='bodyContainerSkills'>
+      <div className="skills-container ">
       <h1>Skills</h1>
       <div className="skills-list">
       <div className="skills-category fromLeft">
@@ -175,6 +176,9 @@ const Skills = () => {
       </div>
     </div>
     </div>
+
+    </div>
+    
   );
 };
 

@@ -9,7 +9,7 @@ import phoneIcon from '../../resources/phoneicon.png';
 
 const Contact = () => {
   return (
-    <div className="contact-container">
+      <div className="contact-container">
       <div className='contactHeader fromLeft'>
         <h1 className='centerClass'>Contact Me</h1>
         <p>Feel free to reach out through any of the following channels:</p>

@@ -96,7 +96,8 @@ const About = () => {
   };
 
   return (
-    <div className="about-container">
+    <div className='bodyContainerAbout'>
+ <div className="about-container">
        <h1>About Me </h1>
     
       <div className="about-content">
@@ -176,6 +177,8 @@ const About = () => {
         </div>
       )}
     </div>
+    </div>
+   
   );
 };
 
