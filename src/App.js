@@ -19,7 +19,6 @@ class App extends Component {
             <Route path="/profile-portfolio/about" element={<About />} />
             <Route path="/profile-portfolio/projects" element={<Projects />} />
             <Route path="/profile-portfolio/skills" element={<Skills />} />
-            <Route path="/profile-portfolio/hobby" element={<Hobby />} />
             <Route path="/profile-portfolio/contact" element={<Contact />} />
           </Routes>
         </div>
