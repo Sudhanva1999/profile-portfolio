@@ -47,6 +47,11 @@ function Header() {
           </Link>
         </li>
         <li className="nav__item">
+          <Link to="/profile-portfolio/hobby" className="nav__link" onClick={closeMenu}>
+            Hobbies
+          </Link>
+        </li>
+        <li className="nav__item">
           <Link to="/profile-portfolio/contact" className="nav__link" onClick={closeMenu}>
             Contact
           </Link>
