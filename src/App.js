@@ -11,7 +11,7 @@ import Projects from './components/projects/Projects';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router >
         <div className="App">
           <Header />
           <Routes>

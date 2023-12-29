@@ -45,10 +45,10 @@ const Profile = () => {
             socials!
             </p>
             <div className="social-icons">
-          <a className='social-link' href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer">
+          <a className='social-link' href="https://github.com/Sudhanva1999" target="_blank" rel="noopener noreferrer">
             <img className="social-icon" src={githubIcon} alt="GitHub" />
           </a>
-          <a className='social-link' href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
+          <a className='social-link' href="https://www.instagram.com/sudhanva1999/" target="_blank" rel="noopener noreferrer">
             <img className="social-icon" src={instagramIcon} alt="Instagram" />
           </a>
           <a  className='social-link' href="https://www.linkedin.com/in/sudhanvapaturkar/" target="_blank" rel="noopener noreferrer">

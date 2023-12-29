@@ -18,7 +18,7 @@
 }
 
 .contact-container {
-  background-image: url('../../resources/background/contact.jpg');
+  background-image: url('../../resources/background/contact.png');
     background-color: #1b1b1b;
     color: #ffffff;
     padding: 20px;
@@ -84,7 +84,11 @@
   }
   
   @media (max-width: 768px) {
+    .contactHeader {
+      max-width: 350px;
+    }
     .contact-container  {
-        max-width: 350px;
+        max-width: 360px;
       }
+  
 }
