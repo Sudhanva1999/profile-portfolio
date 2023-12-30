@@ -1,34 +1,37 @@
-
 @keyframes slideInFromLeft {
     0% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slideInFromRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
 
-  @keyframes growFromPoint {
-    0% {
-      transform: scale(0);
-    }
     100% {
-      transform: scale(1);
+        transform: translateX(0);
     }
-  }
+}
 
-  .growOut {
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes growFromPoint {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.growOut {
     animation: 0.3s ease-in-out 0s 1 growFromPoint;
-  }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -55,7 +58,7 @@ body {
 
 table {
     margin: 0 auto;
-    width: 80%; 
+    width: 80%;
     border-collapse: collapse;
 }
 
@@ -84,7 +87,7 @@ td {
     width: 100%;
     height: 100%;
     background-image: url('../../resources/background/about.jpg');
-  }
+}
 
 .fromLeft {
     animation: 1s ease-out 0s 1 slideInFromLeft;
@@ -93,6 +96,7 @@ td {
 .fromRight {
     animation: 1s ease-out 0s 1 slideInFromRight;
 }
+
 .image-text-separator {
     border-right: 1px solid #3498db;
     margin: 0 15px;
@@ -137,7 +141,7 @@ td {
 }
 
 
-.experience-details > ul {
+.experience-details>ul {
     margin-bottom: 20px;
     text-align: left;
 }
@@ -178,7 +182,7 @@ a {
         max-width: 350px;
     }
 
-    .about-container > h1 {
+    .about-container>h1 {
         font-size: 40px;
     }
 
@@ -187,8 +191,8 @@ a {
     }
 
     .about_icon,
-.about_icon_sq {
-    max-height: 80px;
-    max-width: 70px;
-}
+    .about_icon_sq {
+        max-height: 80px;
+        max-width: 70px;
+    }
 }

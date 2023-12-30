@@ -1,8 +1,8 @@
-/* Profile.css */
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -12,6 +12,7 @@
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -37,114 +38,122 @@
 }
 
 @keyframes filling {
-  0%, 90% { fill: white; fill-opacity: 0; }
-  100% { fill: white; fill-opacity: 1; }
+
+  0%,
+  90% {
+    fill: white;
+    fill-opacity: 0;
+  }
+
+  100% {
+    fill: white;
+    fill-opacity: 1;
+  }
 }
 
 .profile-container {
   font-family: 'Poppins', sans-serif;
   display: flex;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 60%;
-    margin: auto ;
-    margin-top: 10%;
-  }
-    
-  .profile-picture {
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    width: 330px;
-    height: 350px;
-    border-radius: 50%;
-    padding: 10px;
-  }
-  
-  .profile-info {
-    animation: 1s ease-out 0s 1 slideInFromRight;
-    color: white;
-    flex: 1;
-    text-align: left;
-    margin-left: 5%;
-    min-width: 300px;
-  }
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 60%;
+  margin: auto;
+  margin-top: 10%;
+}
 
-  h1 {
-    font-size: 70px;
-    align-self: flex-start;
-  }
+.profile-picture {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  width: 330px;
+  height: 350px;
+  border-radius: 50%;
+  padding: 10px;
+}
 
-  .social-icons {
-    display: flex;
-    justify-content:flex-start;
-    margin-top: 20px; 
-  }
-  
-  .social-icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.2s ease-in-out; 
-  }
-  
-  .social-link {
-    margin-left: 10px;
-  }
+.profile-info {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  color: white;
+  flex: 1;
+  text-align: left;
+  margin-left: 5%;
+  min-width: 300px;
+}
 
-  .social-icon:hover {
-    transform: scale(1.1);
-  }
-  
+h1 {
+  font-size: 70px;
+  align-self: flex-start;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-link {
+  margin-left: 10px;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
 
 .download-button {
   font-family: 'Poppins', sans-serif;
-    margin-left: 15px;
-    height: 50px;
-    font-size: 1.6rem;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+  margin-left: 15px;
+  height: 50px;
+  font-size: 1.6rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.download-button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+
+  .profile-container {
+    margin-top: 2%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
-  .download-button:hover {
-    transform: scale(1.1);
+
+  .profile-info {
+    min-width: 310px;
   }
 
-  @media (max-width: 768px) {
+  .profile-picture-container {
+    margin-right: 0;
+    margin-bottom: 20px;
 
-    .profile-container {
-      margin-top: 2%;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .profile-info {
-      min-width:310px;
-    }
-
-    .profile-picture-container {
-      margin-right: 0;
-      margin-bottom: 20px;
-     
-    }
-  
-    .profile-picture {
-      width: 190px;
-      height: 200px;
-      padding: 10px;
-    }
-
-    .social-icon {
-        width: 30px;
-        height: 30px;
-      }
-
-      .download-button {
-        height: 30px;
-        font-size: 1.4rem;
-      }
   }
-  
+
+  .profile-picture {
+    width: 190px;
+    height: 200px;
+    padding: 10px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .download-button {
+    height: 30px;
+    font-size: 1.4rem;
+  }
+}

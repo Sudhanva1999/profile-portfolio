@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
 import Carousel from '../projectslides/Carousel';
 
 import cameraicon from '../../resources/hobby/cameraicon.gif'
@@ -96,7 +95,7 @@ const animationSlides = [
 
 
 const Hobby = () => {
-    
+
     const scrollToProject = (projectId) => {
         const element = document.getElementById(projectId);
         if (element) {
@@ -110,114 +109,114 @@ const Hobby = () => {
 
     return (
         <div className='bodyContainerHob'>
-        <div className="hob-container">
-            <h1>Hobbies !</h1>
-            <div className='hob-list'>
-            <div className="hob-name fromLeft" onClick={() => scrollToProject('photo')}>
-                   Wildlife Photography
+            <div className="hob-container">
+                <h1>Hobbies !</h1>
+                <div className='hob-list'>
+                    <div className="hob-name fromLeft" onClick={() => scrollToProject('photo')}>
+                        Wildlife Photography
+                        <div>
+
+                            <img className="actual-icon" src={cameraicon} />
+                        </div>
+                    </div>
+                    <div className="hob-name" onClick={() => scrollToProject('painting')}>
+                        Painting
+                        <div>
+
+                            <img className="actual-icon" src={paintingicon} />
+                        </div>
+                    </div>
+                    <div className="hob-name fromRight" onClick={() => scrollToProject('animation')}>
+                        3d Animation
+                        <div>
+                            <img className="actual-icon" src={animationicon} />
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="photo" className="hob-section fromLeft">
+                    <h2>Wildlife Photography
+                        <button className="back-to-top" onClick={scrollToTop}>
+                            Back to Top
+                        </button>
+                    </h2>
                     <div>
-                        
-                        <img className="actual-icon" src={cameraicon} />
+                        <Carousel slides={photoSlides} />
+                        <div>
+                            <br />
+                            <p>
+                                Wildlife photography is my profound connection to the beauty of the natural world.
+                                Local photowalks in Ambazari Biodiversity Park,in Nagpur India focused on capturing birds,
+                                used to serve as a therapeutic escape, offering stress relief amid the serene surroundings.
+                                Each click of the camera freezes moments in time, immortalizing the elegance and
+                                majesty of the diverse creatures inhabiting our planet. Through this art form,
+                                I find solace and a renewed appreciation for the delicate balance of nature.
+                            </p>
+                            <br />
+                            <h4>Find all of my photos on my Instagram Page <a href="https://www.instagram.com/hobby_clicks_/" >Here.</a></h4>
+                        </div>
                     </div>
                 </div>
-                <div className="hob-name" onClick={() => scrollToProject('painting')}>
-                    Painting
+
+                <div id="painting" className="hob-section">
+                    <h2>
+                        Painting
+                        <button className="back-to-top" onClick={scrollToTop}>
+                            Back to Top
+                        </button>
+                    </h2>
                     <div>
-                       
-                        <img className="actual-icon" src={paintingicon} />
+                        <div >
+
+                            <div className='sliderContainer'>
+                                <Carousel slides={paintSlides} />
+
+                            </div>
+
+                            <br />
+                            <p>
+                                Painting is like my personal playground of colors and creativity, and I absolutely
+                                love how it doubles as the ultimate stress-buster. When I grab a canvas and let
+                                loose with a paintbrush, it's like giving my imagination free rein. There's
+                                something magical about watching random strokes turn into a meaningful picture right
+                                before my eyes.
+                            </p>
+                            <br />
+                            <h4>Find all of my paintings on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a></h4>
+                        </div>
                     </div>
                 </div>
-                <div className="hob-name fromRight" onClick={() => scrollToProject('animation')}>
-                    3d Animation
+
+                <div id="animation" className="hob-section">
+                    <h2>
+                        Animation
+                        <button className="back-to-top" onClick={scrollToTop}>
+                            Back to Top
+                        </button>
+                    </h2>
+                    <Carousel slides={animationSlides} />
                     <div>
-                        <img className="actual-icon" src={animationicon} />
+                        <div>
+                            <br />
+                            <p>
+                                It's mind-blowing to think about the incredible world of Blender animation,
+                                especially when you consider that one can learn everything about it through
+                                YouTube tutorials. The fact that one can go from knowing nothing to creating
+                                dynamic, eye-catching animations and have the power to convert their imagination
+                                to tangible video product simply by watching online videos is nothing short
+                                of amazing.
+                            </p>
+                            <br />
+                            <h4>Find all of my animations on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a><br />
+                                And also on my Youtube channel <a href="https://www.youtube.com/playlist?list=PLy6_wu5if88X_IHKrSjSDZdiWR73xAQD6" >Here.</a></h4>
+                        </div>
                     </div>
                 </div>
 
             </div>
-            
-
-            <div id="photo" className="hob-section fromLeft">
-                <h2>Wildlife Photography
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <Carousel slides={photoSlides} />
-                    <div>
-                        <br />
-                        <p>
-                        Wildlife photography is my profound connection to the beauty of the natural world.
-                         Local photowalks in Ambazari Biodiversity Park,in Nagpur India focused on capturing birds, 
-                         used to serve as a therapeutic escape, offering stress relief amid the serene surroundings. 
-                         Each click of the camera freezes moments in time, immortalizing the elegance and 
-                         majesty of the diverse creatures inhabiting our planet. Through this art form, 
-                         I find solace and a renewed appreciation for the delicate balance of nature.
-                        </p>
-                        <br />
-                        <h4>Find all of my photos on my Instagram Page <a href="https://www.instagram.com/hobby_clicks_/" >Here.</a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div id="painting" className="hob-section">
-                <h2>
-                    Painting
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <div > 
-                   
-                    <div className='sliderContainer'>
-                    <Carousel slides={paintSlides} />
-
-                    </div>
-                   
-                        <br />
-                        <p>
-                        Painting is like my personal playground of colors and creativity, and I absolutely
-                         love how it doubles as the ultimate stress-buster. When I grab a canvas and let 
-                         loose with a paintbrush, it's like giving my imagination free rein. There's 
-                         something magical about watching random strokes turn into a meaningful picture right 
-                         before my eyes.
-                        </p>
-                        <br />
-                        <h4>Find all of my paintings on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div id="animation" className="hob-section">
-                <h2>
-                    Animation
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <Carousel slides={animationSlides} />
-                <div>
-                    <div>
-                        <br />
-                        <p>
-                        It's mind-blowing to think about the incredible world of Blender animation, 
-                        especially when you consider that one can learn everything about it through 
-                        YouTube tutorials. The fact that one can go from knowing nothing to creating
-                          dynamic, eye-catching animations and have the power to convert their imagination
-                          to tangible video product simply by watching online videos is nothing short 
-                          of amazing. 
-                        </p>
-                        <br />
-                        <h4>Find all of my animations on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a><br/>
-                        And also on my Youtube channel <a href="https://www.youtube.com/playlist?list=PLy6_wu5if88X_IHKrSjSDZdiWR73xAQD6" >Here.</a></h4>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
     );
 };
 

@@ -23,7 +23,7 @@ function Header() {
   return (
     <nav className="nav">
       <Link to="/" className="nav__brand">
-        { "{ Sudhanva Paturkar }"}
+        {"{ Sudhanva Paturkar }"}
       </Link>
       <ul className={active}>
         <li className="nav__item">
