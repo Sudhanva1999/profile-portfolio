@@ -2,29 +2,37 @@ import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 import Carousel from '../projectslides/Carousel';
-import javaicon from '../../resources/techicon/java.gif'
-import pythonicon from '../../resources/techicon/pythongif.gif'
-import javascripticon from '../../resources/techicon/javascripticon.gif'
 
-import reacticon from '../../resources/skillIcons/reacticon.png'
-import htmlicon from '../../resources/skillIcons/htmlicon.png'
-import cssicon from '../../resources/skillIcons/cssicon.png'
-import booticon from '../../resources/skillIcons/booticon.png'
-import flaskicon from '../../resources/skillIcons/flaskicon.png'
-import phpicon from '../../resources/skillIcons/phpicon.png'
-import firebaseicon from '../../resources/skillIcons/realtimeicon.png'
-import sqlicon from '../../resources/skillIcons/sqlicon.png'
-import giticon from '../../resources/skillIcons/githubicon.png'
-import springicon from '../../resources/skillIcons/springicon.png'
+import cameraicon from '../../resources/hobby/cameraicon.gif'
+import animationicon from '../../resources/hobby/animationicon.gif'
+import paintingicon from '../../resources/hobby/paintingicon.gif'
 
+import photo1 from '../../resources/hobby/wildlife/1.JPG'
+import photo2 from '../../resources/hobby/wildlife/2.JPG'
+import photo3 from '../../resources/hobby/wildlife/3.JPG'
+import photo4 from '../../resources/hobby/wildlife/4.JPG'
+import photo5 from '../../resources/hobby/wildlife/5.JPG'
+import photo6 from '../../resources/hobby/wildlife/6.JPG'
+import photo7 from '../../resources/hobby/wildlife/7.JPG'
+import photo9 from '../../resources/hobby/wildlife/9.JPG'
+import photo10 from '../../resources/hobby/wildlife/10.JPG'
+import photo11 from '../../resources/hobby/wildlife/11.JPG'
+import photo12 from '../../resources/hobby/wildlife/12.JPG'
+import photo13 from '../../resources/hobby/wildlife/13.JPG'
+import photo14 from '../../resources/hobby/wildlife/14.JPG'
+import photo15 from '../../resources/hobby/wildlife/15.JPG'
+import photo16 from '../../resources/hobby/wildlife/16.JPG'
+import photo17 from '../../resources/hobby/wildlife/17.JPG'
 
+import paint1 from '../../resources/hobby/painting/1.png'
+import paint2 from '../../resources/hobby/painting/2.png'
+import paint3 from '../../resources/hobby/painting/3.png'
+import paint4 from '../../resources/hobby/painting/4.png'
+import paint5 from '../../resources/hobby/painting/5.png'
+import paint6 from '../../resources/hobby/painting/6.png'
+import paint7 from '../../resources/hobby/painting/7.png'
+import paint8 from '../../resources/hobby/painting/8.png'
 
-import javaimg1 from '../../resources/projectimages/1_java/1_java.png'
-import javaimg2 from '../../resources/projectimages/1_java/2_java.png'
-import javaimg3 from '../../resources/projectimages/1_java/3_java.png'
-import javaimg4 from '../../resources/projectimages/1_java/4_java.png'
-import javaimg5 from '../../resources/projectimages/1_java/5_java.png'
-import javaimg6 from '../../resources/projectimages/1_java/6_java.png'
 
 import handimg1 from '../../resources/projectimages/3_hand/hand_1.png'
 import handimg2 from '../../resources/projectimages/3_hand/hand_2.png'
@@ -46,44 +54,46 @@ import expense2 from '../../resources/projectimages/expense/expense_2.png'
 import expense3 from '../../resources/projectimages/expense/expense_3.png'
 import expense4 from '../../resources/projectimages/expense/expense_4.png'
 
-import './Projects.css';
+import './Hobby.css';
 
-const slides1 = [
-    <img className='project-slides' key={3} src={javaimg3} alt="Slide 3" />,
-    <img className='project-slides' key={1} src={javaimg1} alt="Slide 1" />,
-    <img className='project-slides' key={2} src={javaimg2} alt="Slide 2" />,
-    <img className='project-slides' key={4} src={javaimg4} alt="Slide 4" />,
-    <img className='project-slides' key={5} src={javaimg5} alt="Slide 5" />,
-    <img className='project-slides' key={6} src={javaimg6} alt="Slide 6" />,
+const photoSlides = [
+    <img className='hob-slides' key={2} src={photo2} alt="Slide 2" />,
+    <img className='hob-slides' key={1} src={photo1} alt="Slide 1" />,
+    <img className='hob-slides' key={3} src={photo3} alt="Slide 3" />,
+    <img className='hob-slides' key={4} src={photo4} alt="Slide 4" />,
+    <img className='hob-slides' key={5} src={photo5} alt="Slide 5" />,
+    <img className='hob-slides' key={6} src={photo6} alt="Slide 6" />,
+    <img className='hob-slides' key={7} src={photo7} alt="Slide 7" />,
+    <img className='hob-slides' key={17} src={photo17} alt="Slide 17" />,
+    <img className='hob-slides' key={9} src={photo9} alt="Slide 9" />,
+    <img className='hob-slides' key={10} src={photo10} alt="Slide 10" />,
+    <img className='hob-slides' key={11} src={photo11} alt="Slide 11" />,
+    <img className='hob-slides' key={12} src={photo12} alt="Slide 12" />,
+    <img className='hob-slides' key={13} src={photo13} alt="Slide 13" />,
+    <img className='hob-slides' key={14} src={photo14} alt="Slide 14" />,
+    <img className='hob-slides' key={15} src={photo15} alt="Slide 15" />,
+    <img className='hob-slides' key={16} src={photo16} alt="Slide 16" />,
 ];
 
-const slidesHand = [
-    <img className='project-slides' key={3} src={handimg1} alt="Slide 3" />,
-    <img className='project-slides' key={1} src={handimg2} alt="Slide 1" />,
-    <img className='project-slides' key={2} src={handimg3} alt="Slide 2" />,
-    <img className='project-slides' key={4} src={handimg4} alt="Slide 4" />,
-    <img className='project-slides' key={5} src={handimg5} alt="Slide 5" />,
+const paintSlides = [
+    <img className='paint-slides' key={1} src={paint1} alt="Slide 1" />,
+    <img className='paint-slides' key={2} src={paint2} alt="Slide 2" />,
+    <img className='paint-slides' key={3} src={paint3} alt="Slide 3" />,
+    <img className='paint-slides' key={4} src={paint4} alt="Slide 4" />,
+    <img className='paint-slides' key={5} src={paint5} alt="Slide 5" />,
+    <img className='paint-slides' key={6} src={paint6} alt="Slide 6" />,
+    <img className='paint-slides' key={7} src={paint7} alt="Slide 7" />,
+    <img className='paint-slides' key={8} src={paint8} alt="Slide 8" />,
 ];
 
 
-const portalimgs = [
-    <img className='project-slides' key={3} src={portalimg1} alt="Slide 3" />,
-    <img className='project-slides' key={1} src={portalimg2} alt="Slide 1" />,
-    <img className='project-slides' key={2} src={portalimg3} alt="Slide 2" />,
+const animationSlides = [
+    <iframe className='anime-slides' width="560" height="315" src="https://www.youtube.com/embed/n7Vtl7SVC9s?si=AWIyBM97DHwas-IQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>,
+    <iframe className='anime-slides' width="560" height="315" src="https://www.youtube.com/embed/QNLCzkhY6sw?si=uiecJMVA24g7joQv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>,
+    <iframe className='anime-slides' width="560" height="315" src="https://www.youtube.com/embed/MU80wJgEbD0?si=mdqILvlyExfbT7J2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>,
+    <iframe className='anime-slides' width="560" height="315" src="https://www.youtube.com/embed/O0iQPv13BXE?si=h0BD9OBMO78T_pss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>,
 ];
 
-const fakeNewsImg = [
-    <img className='project-slides' key={1} src={fakeNewsImg1} alt="Slide 3" />,
-    <img className='project-slides' key={2} src={fakeNewsImg2} alt="Slide 1" />,
-    <img className='project-slides' key={3} src={fakeNewsImg3} alt="Slide 2" />,
-];
-
-const expenseImg = [
-    <img className='project-slides' key={1} src={expense1} alt="Slide 3" />,
-    <img className='project-slides' key={2} src={expense2} alt="Slide 1" />,
-    <img className='project-slides' key={3} src={expense3} alt="Slide 2" />,
-    <img className='project-slides' key={4} src={expense4} alt="Slide 4" />,
-];
 
 const Hobby = () => {
     
@@ -99,415 +109,115 @@ const Hobby = () => {
     };
 
     return (
-        <div className='bodyContainerProject'>
-        <div className="projects-container">
-            <h1>My Projects</h1>
-            <h3>Click for details !</h3><br />
-            <div className="project-list">
-                <div className="project-name fromLeft" onClick={() => scrollToProject('project1')}>
-                    Image Processing Software
+        <div className='bodyContainerHob'>
+        <div className="hob-container">
+            <h1>Hobbies !</h1>
+            <div className='hob-list'>
+            <div className="hob-name fromLeft" onClick={() => scrollToProject('photo')}>
+                   Wildlife Photography
                     <div>
-                        <img className="actual-icon" src={javaicon} />
-                    </div>
-
-                </div>
-                <div className="project-name fromRight" onClick={() => scrollToProject('project2')}>
-                    React Based Complex Team Management Tool
-                    <div>
-                        <img className="actual-icon" src={reacticon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                        <img className="actual-icon" src={firebaseicon} />
-                    </div>
-                </div>
-                <div className="project-name fromLeft" onClick={() => scrollToProject('project3')}>
-                    RNN Based Handwriting Recognizer and Analysis Tool
-                    <div>
-                        <img className="actual-icon" src={pythonicon} />
-                        <img className="actual-icon" src={flaskicon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                    </div>
-
-                </div>
-                <div className="project-name fromRight" onClick={() => scrollToProject('bostonexpense')}>
-                    Expense Tracker App
-                    <div>
-                        <img className="actual-icon" src={pythonicon} />
-                        <img className="actual-icon" src={flaskicon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                        <img className="actual-icon" src={firebaseicon} />
-                    </div>
-                </div>
-                <div className="project-name fromLeft" onClick={() => scrollToProject('project4')}>
-                    Paper Presentation Conference Portal
-                    <div>
-                        <img className="actual-icon" src={phpicon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                        <img className="actual-icon" src={sqlicon} />
-                    </div>
-
-                </div>
-                <div className="project-name fromRight" onClick={() => scrollToProject('project5')}>
-                    CNN based Fake News Detector
-                    <div>
-                        <img className="actual-icon" src={pythonicon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                    </div>
-                </div>
-                <div className="project-name fromLeft" onClick={() => scrollToProject('reactjava')}>
-                    Moview Review Board (A JAVA-REACT Communication POC)
-                    <div>
-                        <img className="actual-icon" src={javaicon} />
-                        <img className="actual-icon" src={reacticon} />
-                        <img className="actual-icon" src={springicon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                    </div>
-                </div>
-                <div className="project-name fromRight" onClick={() => scrollToProject('project6')}>
-                    Client Host Multimedia Player
-                    <div>
-                        <img className="actual-icon" src={pythonicon} />
-                        <img className="actual-icon" src={reacticon} />
-                        <img className="actual-icon" src={javascripticon} />
-                    </div>
-                </div>
-
-                <div className="project-name fromLeft">
-                    This Site !
-                    <div>
-                        <img className="actual-icon" src={reacticon} />
-                        <img className="actual-icon" src={htmlicon} />
-                        <img className="actual-icon" src={cssicon} />
-                        <img className="actual-icon" src={booticon} />
-                        <img className="actual-icon" src={giticon} />
-                    </div>
-                </div>
-            </div>
-
-            <div id="project1" className="project-section">
-                <h2>Image Processing Software
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <Carousel slides={slides1} />
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about :
-                            </strong>
-                        </h3>
-                        <p>
-                            An image processing software that implements features like image sharpening,
-                            levels adjustment, color correction and much more, the main focus being
-                            the software's adherance to MVC design pattern along with several industry
-                            standards focusing on maximum scalability and adaptability to new features.
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - The software has been written entirely in core java without using any libraries
-                            apart from the jdk. <br />
-                            - The software supports preview functionality to reduce
-                            operation time by operating on a smaller subset of the image matrix.   <br />
-                            - The GUI has been implemented in Swing UI and the communication between GUI and
-                            controller has been designed in a way where it can be easiliy swaped out with any
-                            other UI library.  <br />
-                            - Includes a histogram feature similar to the one in Adobe Photoshop where one can see realtime
-                            changes in image color channels as different operations are performed on it.
-                        </p>
-                        <br />
-                        <h4>Code can be made available on request! <Link to="/profile-portfolio/contact" >Contact me.</Link></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project2" className="project-section">
-                <h2>
-                    React Based Complex Team Management Tool
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
-                        <p>
-                            The Complex Team Management Tool is a sophisticated React application
-                            designed to streamline and enhance the collaborative workflow within
-                            complex team structures. Built with a focus on incorporating fundamental
-                            React concepts, this app serves as a showcase for various advanced
-                            front-end development techniques. The app also uses data from rest apis
-                            and uses Google's Firestore to store user details.
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - Context API for Global State : The Context API is employed to manage global state across components, ensuring a centralized and accessible data source.
-                            This approach simplifies state management in larger applications with complex component hierarchies.<br />
-                            - Hooks : React Hooks, such as useState and useEffect, are used to enhance the functional components with stateful logic.
-                            This modern approach allows functional components to manage state and side effects without the need for class components.<br />
-                            - Optimizing Performance : React's performance optimization strategies, including memoization and PureComponent, are implemented to ensure efficient rendering.
-                            This results in a responsive user interface with minimized unnecessary re-renders.<br />
-                            - Conditional Rendering : React's conditional rendering capabilities are employed to display different views based on the application's state.
-                            This ensures that users are presented with relevant information and features depending on the context of their interactions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project3" className="project-section">
-                <h2>
-                    RNN Based Handwriting Recognizer and Analysis Tool
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <Carousel slides={slidesHand} />
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
-                        <p>
-                        The project involves developing a multiclass classifier with the capability 
-                        to distinguish between different handwritings and determine the author. 
-                        Using an innovative image-based approach, the model achieves over 96% 
-                        accuracy in classifying up to 60 authors. The system is designed to be
-                         language-independent, enabling it to analyze various handwriting styles
-                          efficiently.
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - High Accuracy: Achieve authorship identification with unparalleled precision, surpassing 96% accuracy using an advanced RNN-based AI model. <br/>
-                            - Innovative Approach: Depart from conventional methods by adopting an image-based approach, providing enhanced adaptability and language independence for effective handwriting recognition. <br/>
-                            - Efficient Training: Utilize TensorFlow for seamless scalability, enabling training across multiple GPUs, especially advantageous for handling substantial datasets like university assignments. <br/>
-                            - Quick Training: Significantly reduce training time to just one hour, showcasing the model's efficiency in rapidly classifying handwriting styles for up to 60 authors, optimizing both processing speed and resource utilization. <br/>
-                            - Data Generation Capability: Harness the power of an OpenCV script to automatically scan and generate datasets from handwriting samples, adding versatility to the model's training process. <br/>
-                            - Practical Application: Deploy the system in educational environments to validate handwritten assignments, bolstering academic integrity and aiding in plagiarism detection with real-world practicality.<br/>
-                            <br/>
-                            Github: <a href='https://github.com/Sudhanva1999/Handwritting_Classifier' target='_blank'> Find code here !</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="bostonexpense" className="project-section">
-                <h2>
-                    Expense Tracker App
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <Carousel slides={expenseImg} />
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
-                        <p>
-                        The Expense Tracker Web App is a robust Flask-based application designed to streamline expense 
-                        tracking and debt management among user groups. Notably, the application integrates 
-                        Google Authentication through Firebase, providing a secure and convenient login process
-                        for users. This proof-of-concept project aims to offer an intuitive platform for users to 
-                        log in, add expenses, view a comprehensive dashboard summarizing debts, and generate 
-                        insightful reports based on various filters.
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - Google Authentication Integration : Leveraging Firebase Authentication, the app ensures secure user login using Google credentials, enhancing user trust and ease of access.<br/>
-                            - Dashboard Overview : The dashboard provides users with a clear and concise overview of debts and credits, presenting the total amount owed and owed to the user.<br/>
-                            - Expense Management : Users can effortlessly add new expenses, specifying details such as the item, amount, and participants. The app dynamically updates balances to reflect changes accurately.<br/>
-                            - Comprehensive Reports : The app empowers users to generate detailed reports based on various filters, including search queries, specific months, years, and transactions paid by a particular user.<br/>
-                            - Balanced Deletion Logs : Users have the flexibility to delete specific expense logs, and the app intelligently adjusts balances, ensuring accurate and up-to-date financial records.
-                            <br/><br/>
-                            Hosted Site: <a href='https://bostonexpense.onrender.com/' target='_blank'> Find the website here !</a> <br/>
-                            (The site is hosted on a free service so give it time to load !)
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project4" className="project-section">
-                <h2>
-                    Paper Presentation Conference Portal
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <Carousel slides={portalimgs} />
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
-                        <p>
-                        This project involves the creation of a dedicated portal to facilitate the
-                         seamless registration and paper submission process for academics participating 
-                         in SPANDAN 2020, an annual paper presentation conference hosted by YCCE, Nagpur
-                          University. The focus is on providing a user-friendly and efficient platform 
-                          for academics to engage with the event, streamlining the submission and 
-                          registration procedures.
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - Efficient Registration : Enable academics to register easily for SPANDAN 2020 through an intuitive and user-friendly portal.<br />
-                            = Seamless Paper Submission : Streamline the paper submission process, offering academics a straightforward and accessible platform for submitting their papers.<br />
-                            - Bootstrap for UI Design : Utilize Bootstrap to ensure a quick, responsive, and visually appealing user interface, enhancing the overall user experience.<br />
-                            - PHP for Fast Backend Processing : Implement PHP for the backend processing to ensure swift and reliable handling of registration and paper submission data.<br />
-                            - MySQL Database Integration : Utilize MySQL database to store participant information securely, providing a structured and scalable solution for data management.<br />
-                            - Data Security : Implement robust security measures to safeguard participant data, ensuring confidentiality and integrity throughout the submission and registration processes.
-                            <br/><br/>
-                            Hosted Site: <a href='https://spandanycce.in/' target='_blank'> Find the website here !</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="project5" className="project-section">
-                <h2>
-                    CNN based Fake News Detector
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <Carousel slides={fakeNewsImg} />
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
-                        <p>
-                        The CNN-Based Fake News Detector, focuses on leveraging Convolutional Neural Network (CNN) to 
-                        achieve a high level of accuracy in detecting fake news. The project 
-                        encompasses several key features aimed at enhancing the efficiency, 
-                        real-time processing, and fairness of news article classification.
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - High Accuracy Rate : Achieved an impressive accuracy rate of 94.5% in fake news detection, demonstrating the effectiveness of the implemented Convolutional Neural Network (CNN) model. <br />
-                            - User-Friendly Interface : Developed a user-friendly interface using tkinter to facilitate easy interaction with the Fake News Detector, ensuring a seamless experience for users during the classification process. <br />
-                            - RESTful API Integration : Integrated a RESTful API to enable seamless integration of the Fake News Detector into various applications, enhancing accessibility and versatility in deployment. <br />
-                            - Bias Mitigation Techniques : Implemented advanced techniques for bias mitigation, enhancing fairness in the classification of news articles and ensuring a more objective assessment of content. <br />
-                            - Application of Fairness Measures : Incorporated measures to address and minimize biases within the model, promoting fairness and impartiality in the classification of news content. <br />
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="reactjava" className="project-section">
-                <h2>
-                    Moview Review Board (A JAVA-REACT Communication POC)
-                    <button className="back-to-top" onClick={scrollToTop}>
-                        Back to Top
-                    </button>
-                </h2>
-                <div>
-                    <div>
-                        <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
-                        <p>
-                        The Movie Review Web Application serves as a compelling proof of concept, showcasing 
-                        the seamless integration of Java Spring Boot on the backend with React on the
-                         frontend through RESTful APIs. This application provides innovative user 
-                         experience by offering a platform where users can effortlessly explore movies, contribute 
-                         reviews, and access dynamic movie ratings. The project's focal point lies in establishing
-                          efficient communication channels between Java Spring Boot and React, laying the 
-                          foundation for robust and scalable full-stack applications.
                         
-                        </p>
-                        <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - Java-React Communication Excellence : Demonstrate a flawless communication mechanism between Java Spring Boot and React, highlighting the versatility and potential for creating sophisticated full-stack applications.<br />
-                            - Interactive Review System : Provide users with an interactive platform to contribute reviews, leveraging the synergies between Java Spring Boot and React to ensure a smooth and responsive review submission process.<br />
-                            - Java Spring Boot Backend Expertise : Utilize Java Spring Boot as the backend technology, showcasing its prowess in handling backend functionalities, including data processing, storage, and intricate business logic.<br />
-                            - React Frontend Excellence : Develop a feature-rich and responsive frontend using React, emphasizing its role in creating a dynamic and engaging user interface that seamlessly communicates with the Java backend.<br />
-                            - RESTful API Prowess : Emphasize the robustness of RESTful APIs in facilitating smooth data exchange between Java Spring Boot and React, a key factor in the success of this proof of concept.
-                        </p>
+                        <img className="actual-icon" src={cameraicon} />
                     </div>
                 </div>
+                <div className="hob-name" onClick={() => scrollToProject('painting')}>
+                    Painting
+                    <div>
+                       
+                        <img className="actual-icon" src={paintingicon} />
+                    </div>
+                </div>
+                <div className="hob-name fromRight" onClick={() => scrollToProject('animation')}>
+                    3d Animation
+                    <div>
+                        <img className="actual-icon" src={animationicon} />
+                    </div>
+                </div>
+
             </div>
+            
 
-
-            <div id="project6" className="project-section">
-                <h2>
-                    Client Host Media Controller
+            <div id="photo" className="hob-section fromLeft">
+                <h2>Wildlife Photography
                     <button className="back-to-top" onClick={scrollToTop}>
                         Back to Top
                     </button>
                 </h2>
                 <div>
+                    <Carousel slides={photoSlides} />
                     <div>
                         <br />
-                        <h3>
-                            <strong>
-                                What the project is about:
-                            </strong>
-                        </h3>
                         <p>
-                        The Media Player Control Software is a client-server application developed using Python
-                         socket programming and React Native, designed to enable seamless control of media 
-                         player functions across a network. The project, which involves the integration of 
-                         various technologies, showcases versatility and efficiency in managing servers and
-                          facilitating remote media control.
+                        Wildlife photography is my profound connection to the beauty of the natural world.
+                         Local photowalks in Ambazari Biodiversity Park,in Nagpur India focused on capturing birds, 
+                         used to serve as a therapeutic escape, offering stress relief amid the serene surroundings. 
+                         Each click of the camera freezes moments in time, immortalizing the elegance and 
+                         majesty of the diverse creatures inhabiting our planet. Through this art form, 
+                         I find solace and a renewed appreciation for the delicate balance of nature.
                         </p>
                         <br />
-                        <p>
-                            <strong>Key Features:</strong> <br />
-                            - Cross-Platform Control : Developed a client-server architecture using Python socket programming and React Native, allowing users to control media player functions remotely across different platforms.<br />
-                            - Technology Integration : Leveraged a diverse range of technologies, including React Native, Electron, Python, and Node.js, to create a comprehensive solution for building and managing servers, ensuring optimal performance and compatibility.<br />
-                            - React Native for Mobile Control : Implemented React Native for the client-side application, providing a responsive and platform-independent mobile interface for users to control media playback.<br />
-                            - Electron for Desktop Control : Utilized Electron to create a robust desktop application for controlling media player functions, ensuring a consistent and user-friendly experience across various desktop environments.<br />
-                            - Python Socket Programming : Employed Python socket programming to establish a reliable communication channel between the client and server, enabling real-time control of media player functions.<br />
-                            - Node.js Server Management : Integrated Node.js for efficient server management, ensuring smooth communication between the client and server components of the application.
-                        </p>
+                        <h4>Find all of my photos on my Instagram Page <a href="https://www.instagram.com/hobby_clicks_/" >Here.</a></h4>
                     </div>
                 </div>
             </div>
+
+            <div id="painting" className="hob-section">
+                <h2>
+                    Painting
+                    <button className="back-to-top" onClick={scrollToTop}>
+                        Back to Top
+                    </button>
+                </h2>
+                <div>
+                    <div > 
+                   
+                    <div className='sliderContainer'>
+                    <Carousel slides={paintSlides} />
+
+                    </div>
+                   
+                        <br />
+                        <p>
+                        Painting is like my personal playground of colors and creativity, and I absolutely
+                         love how it doubles as the ultimate stress-buster. When I grab a canvas and let 
+                         loose with a paintbrush, it's like giving my imagination free rein. There's 
+                         something magical about watching random strokes turn into a meaningful picture right 
+                         before my eyes.
+                        </p>
+                        <br />
+                        <h4>Find all of my paintings on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="animation" className="hob-section">
+                <h2>
+                    Animation
+                    <button className="back-to-top" onClick={scrollToTop}>
+                        Back to Top
+                    </button>
+                </h2>
+                <Carousel slides={animationSlides} />
+                <div>
+                    <div>
+                        <br />
+                        <p>
+                        It's mind-blowing to think about the incredible world of Blender animation, 
+                        especially when you consider that one can learn everything about it through 
+                        YouTube tutorials. The fact that one can go from knowing nothing to creating
+                          dynamic, eye-catching animations and have the power to convert their imagination
+                          to tangible video product simply by watching online videos is nothing short 
+                          of amazing. 
+                        </p>
+                        <br />
+                        <h4>Find all of my animations on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a><br/>
+                        And also on my Youtube channel <a href="https://www.youtube.com/playlist?list=PLy6_wu5if88X_IHKrSjSDZdiWR73xAQD6" >Here.</a></h4>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-
-        </div>
-
+    </div>
     );
 };
 
