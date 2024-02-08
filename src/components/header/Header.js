@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 import "./Header.css";
 
 function Header() {
@@ -22,39 +21,39 @@ function Header() {
 
   return (
     <nav className="nav">
-      <Link to="/" className="nav__brand">
+      <a className="nav__brand">
         {"{ Sudhanva Paturkar }"}
-      </Link>
+      </a>
       <ul className={active}>
         <li className="nav__item">
-          <Link to="/profile-portfolio" className="nav__link" onClick={closeMenu}>
+          <a  className="nav__link" onClick={closeMenu}>
             Home
-          </Link>
+          </a>
         </li>
         <li className="nav__item">
-          <Link to="/profile-portfolio/about" className="nav__link" onClick={closeMenu}>
+          <a  className="nav__link" onClick={closeMenu}>
             About
-          </Link>
+          </a>
         </li>
         <li className="nav__item">
-          <Link to="/profile-portfolio/projects" className="nav__link" onClick={closeMenu}>
+          <a  className="nav__link" onClick={closeMenu}>
             Projects
-          </Link>
+          </a>
         </li>
         <li className="nav__item">
-          <Link to="/profile-portfolio/skills" className="nav__link" onClick={closeMenu}>
+          <a  className="nav__link" onClick={closeMenu}>
             Skills
-          </Link>
+          </a>
         </li>
         <li className="nav__item">
-          <Link to="/profile-portfolio/hobby" className="nav__link" onClick={closeMenu}>
+          <a className="nav__link" onClick={closeMenu}>
             Hobbies
-          </Link>
+          </a>
         </li>
         <li className="nav__item">
-          <Link to="/profile-portfolio/contact" className="nav__link" onClick={closeMenu}>
+          <a  className="nav__link" onClick={closeMenu}>
             Contact
-          </Link>
+          </a>
         </li>
       </ul>
       <div onClick={navToggle} className={icon}>

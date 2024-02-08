@@ -53,11 +53,12 @@ a {
   padding-left: 10px;
   padding-right: 10px;
   z-index: 99;
+  transition: transform 0.1s ease-in-out;
 }
 
 .nav__link:hover {
   border-radius: 20%;
-  transform: scale(1.3);
+  transform: scale(1.5);
 }
 
 .nav__toggler {

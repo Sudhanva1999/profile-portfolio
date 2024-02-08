@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
-import Carousel from '../projectslides/Carousel';
 import javaicon from '../../resources/techicon/java.gif'
 import pythonicon from '../../resources/techicon/pythongif.gif'
 import javascripticon from '../../resources/techicon/javascripticon.gif'
+import { makeStyles } from "@material-ui/core/styles";
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Card from "react-animated-3d-card";
 
 import reacticon from '../../resources/skillIcons/reacticon.png'
 import htmlicon from '../../resources/skillIcons/htmlicon.png'
@@ -98,28 +107,66 @@ const Projects = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const cards = [
+        {
+          title: "Build faster",
+          text: "C, C#, C++, Python, Dart, Java, HTML, Javascript, PHP, SQL"
+        },
+        {
+          title: "Build f",
+          text:
+            "ROS, OpenCL, CUDA, OpenCV, TensorFlow, Pytorch, .NET, Flutter, Unity, NodeJS, Express"
+        },
+        {
+          title: "Build a",
+          text: "C, C#, C++, Python, Dart, Java, HTML, Javascript, PHP, SQL"
+        },
+        {
+          title: "Build d",
+          text:
+            "ROS, OpenCL, CUDA, OpenCV, TensorFlow, Pytorch, .NET, Flutter, Unity, NodeJS, Express"
+        }
+      ];
+
     return (
         <div className='bodyContainerProject'>
             <div className="projects-container">
                 <h1>My Projects</h1>
-                <h3>Click for details !</h3><br />
                 <div className="project-list">
                     <div className="project-name fromLeft" onClick={() => scrollToProject('project1')}>
-                        Image Processing Software
+                        <Card
+                            style={{
+                                width: "200px",
+                                height: "180px",
+                                cursor: "pointer"
+                            }}
+                        >
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {"item.title"}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    {"item.text"}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                        {/* Image Processing Software
                         <div>
                             <img className="actual-icon" src={javaicon} />
-                        </div>
+                        </div> */}
 
                     </div>
                     <div className="project-name fromRight" onClick={() => scrollToProject('project2')}>
-                        React Based Complex Team Management Tool
-                        <div>
+
+                        {/* <div>
                             <img className="actual-icon" src={reacticon} />
                             <img className="actual-icon" src={htmlicon} />
                             <img className="actual-icon" src={cssicon} />
                             <img className="actual-icon" src={booticon} />
                             <img className="actual-icon" src={firebaseicon} />
-                        </div>
+                        </div> */}
+
+                        
                     </div>
                     <div className="project-name fromLeft" onClick={() => scrollToProject('project3')}>
                         RNN Based Handwriting Recognizer and Analysis Tool
@@ -195,7 +242,7 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div id="project1" className="project-section">
+                {/* <div id="project1" className="project-section">
                     <h2>Image Processing Software
                         <button className="back-to-top" onClick={scrollToTop}>
                             Back to Top
@@ -230,7 +277,7 @@ const Projects = () => {
                                 changes in image color channels as different operations are performed on it.
                             </p>
                             <br />
-                            <h4>Code can be made available on request! <Link to="/profile-portfolio/contact" >Contact me.</Link></h4>
+                            <h4>Code can be made available on request! <a>Contact me.</a></h4>
                         </div>
                     </div>
                 </div>
@@ -502,7 +549,7 @@ const Projects = () => {
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
 
