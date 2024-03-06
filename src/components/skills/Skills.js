@@ -25,16 +25,13 @@ const SkillItem = ({ skill, level }) => {
   return (
     <div className={`skill-item`}>
       <div className="skill-name">{skill}</div>
-      <div className="skill-level">
-        <div className="skill-fill" style={{ width: `${hovered ? level : 0}%` }}></div>
-      </div>
     </div>
   );
 };
 
 const Skills = () => {
   return (
-    <div className='bodyContainerSkills'>
+    <div id="skills" className='bodyContainerSkills'>
       <div className="skills-container ">
         <h1>Skills</h1>
         <div className="skills-list">

@@ -37,7 +37,7 @@
 }
 
 .hob-container {
-    background-color: #1c1c1c;
+    background-color: black;
     color: #ffffff;
     padding: 20px;
     margin-left: auto;
@@ -54,6 +54,19 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.hereButton {
+    background-color: black;
+    border: 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hereButton:hover {
+    background-color: rgb(23, 23, 23);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    
+}
 .hob-icon {
     margin-left: auto;
 

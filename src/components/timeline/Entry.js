@@ -47,7 +47,7 @@ export class Entry extends React.Component {
           width: circleWidth + 'px',
           height: circleWidth + 'px',
           borderRadius: '50%',
-          background: lineColor,
+          background: "white",
           transition: animations ? 'background .5s ease-in-out' : null,
           zIndex: 1,
         },
@@ -61,7 +61,7 @@ export class Entry extends React.Component {
           }
         },
         inView: {
-          background: activeColor,
+          background: "white",
         }
       },
     }

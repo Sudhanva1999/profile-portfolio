@@ -23,7 +23,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className={`profile-container ${animationComplete ? 'animate' : ''}`}>
+    <div id="home" className={`profile-container ${animationComplete ? 'animate' : ''}`}>
       <div className="profile-picture-container">
         <img
           className="profile-picture"

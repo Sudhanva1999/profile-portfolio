@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/header/Header';
 import Profile from './components/profile/Profile';
@@ -8,20 +8,19 @@ import Skills from './components/skills/Skills';
 import Projects from './components/projects/Projects';
 import Hobby from './components/hobbies/Hobby';
 
-class App extends Component {
-  render() {
-    return (
-        <div className="App">
-          <Header />
-          <Profile />
-          <About />
-          <Projects />
-          <Skills />
-          <Hobby />
-          <Contact />
-        </div>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Profile />
+      <About />
+      <Projects />
+      <Skills />
+      <Hobby />
+      <Contact />
+      <div className='bottomFooter'> </div>
+    </div>
+  );
 }
 
 export default App;

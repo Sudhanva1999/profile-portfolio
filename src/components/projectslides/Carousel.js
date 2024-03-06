@@ -21,7 +21,11 @@ const Carousel = ({ slides }) => {
       pagination={{
         clickable: true,
       }}
-      navigation={true}
+      navigation={{
+        nextEl: ".image-swiper-button-next",
+        prevEl: ".image-swiper-button-prev",
+        disabledClass: "swiper-button-disabled"
+      }}
     >
       {slides.map((slide) => (
         <SwiperSlide> {slide}</SwiperSlide>

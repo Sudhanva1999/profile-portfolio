@@ -25,68 +25,130 @@ const PopupContent = ({ content }) => {
 const SeniorAccenturePopupContent = () => {
   return (
     <div class="experience-details">
-      <img className="about_icon" src={accentureIcon} alt="accentureIcon" />
-      <img className="about_icon_sq" src={adobeIcon} alt="adobeIcon" />
-      <h2>Senior FullStack Developer</h2>
-      <ul>
-        <li>- Collaborated with Adobe's SanJose Team on their FillAndSign product, enhancing API calls and optimizing page load times by 20%.</li>
-        <li>- Implemented dark mode for signature images using React JS, enhancing user experience.</li>
-        <li>- Led the development of key features, like dark mode and API-based document processing, resolving over 40 major software bugs.</li>
-        <li>- Participated in several bug hunts organized by Adobe and reported 11 major bugs that affected optimization and user experience.</li>
-      </ul>
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <img className="about_icon" src={accentureIcon} alt="accentureIcon" />
+          <img className="about_icon_sq" src={adobeIcon} alt="adobeIcon" />
+          <div class="ag-courses-item_title">
+            Senior FullStack Developer
+          </div>
+
+          <div class="ag-courses-item_date-box">
+            <span class="ag-courses-item_date">
+              <ul>
+                <li>- Collaborated with Adobe's SanJose Team on their FillAndSign product, enhancing API calls and optimizing page load times by 20%.</li>
+                <li>- Implemented dark mode for signature images using React JS, enhancing user experience.</li>
+                <li>- Led the development of key features, like dark mode and API-based document processing, resolving over 40 major software bugs.</li>
+                <li>- Participated in several bug hunts organized by Adobe and reported 11 major bugs that affected optimization and user experience.</li>
+              </ul>
+            </span>
+          </div>
+        </a>
+      </div>
     </div>
   );
 };
 
 const AccentureFullStackDeveloperPopupContent = () => (
-  <div className="experience-details">
+<div class="experience-details">
+<div class="ag-courses_item">
+  <a href="#" class="ag-courses-item_link">
+    <div class="ag-courses-item_bg"></div>
     <img className="about_icon" src={accentureIcon} alt="accentureIcon" />
     <img className="about_icon_sq" src={adobeIcon} alt="adobeIcon" />
+    <div class="ag-courses-item_title">
+    Full-Stack Developer
+    </div>
 
-    <h2>Full-Stack Developer</h2>
+    <div class="ag-courses-item_date-box">
+      <span class="ag-courses-item_date">
+      
     <ul>
       <li>- Collaborated with Adobe on their Adobe Sign product by resolving over 24 major customer-facing defects and bugs in the tool.</li>
       <li>- Implemented 3 new API features for faster document processing along with a Splunk dashboard to monitor their performance.</li>
       <li>- Awarded the Accenture Pinnacle Award for exceptional contribution in the Product Engineering department for FY22-Q4.</li>
     </ul>
-  </div>
+      </span>
+    </div>
+  </a>
+</div>
+</div>
 );
 
 const UtechInternPopupContent = () => (
-  <div className="experience-details">
-    <img className="about_icon" src={utechIcon} alt="utechIcon" />
-    <h2>Software Development Intern</h2>
-    <ul>
+<div class="experience-details">
+<div class="ag-courses_item">
+  <a href="#" class="ag-courses-item_link">
+    <div class="ag-courses-item_bg"></div>
+    <img className="about_icon_intern" src={utechIcon} alt="utechIcon" />
+    <div class="ag-courses-item_title">
+    Software Development Intern
+    </div>
+
+    <div class="ag-courses-item_date-box">
+      <span class="ag-courses-item_date">
+      
+      <ul>
       <li>- Designed and created a web-based dashboard for smart home automation tools, managing sensor data for smart home analytics.</li>
       <li>- Utilized React JS for lightweight dashboards following MVC principles.</li>
       <li>- Led a team of 10 interns and conducted regular scrum meetings to efficiently deliver output and meet deadlines.</li>
       <li>- Awarded Best Intern for the best performance and most contributions made towards product development.</li>
     </ul>
-  </div>
+      </span>
+    </div>
+  </a>
+</div>
+</div>
 );
 
 const YCCEPopupContent = () => (
-  <div className="experience-details">
-    <img className="about_icon" src={ycceIcon} alt="ycceIcon" />
-    <h2>Nagpur University</h2>
-    <ul>
+<div class="experience-details">
+<div class="ag-courses_item">
+  <a href="#" class="ag-courses-item_link">
+    <div class="ag-courses-item_bg"></div>
+    <img className="about_icon_ycce" src={ycceIcon} alt="ycceIcon" />
+    <div class="ag-courses-item_title">
+    Nagpur University
+    </div>
+
+    <div class="ag-courses-item_date-box">
+      <span class="ag-courses-item_date">
+      
+      <ul>
       <li>- Awarded semester topper for 2 semesters during undergraduate.</li>
       <li>- Graduated with a CGPA of 9.02.</li>
       <li>- Conducted several workshops on web development for juniors.</li>
       <li>- Taught high school kids programming basics under the Compufest event.</li>
       <li>- Served as the technical committee head for Spandan, an inter-college paper presentation competition held by the Computer Technology department at YCCE.</li>
     </ul>
-  </div>
+      </span>
+    </div>
+  </a>
+</div>
+</div>
 );
 
 const NEUPopupContent = () => (
-  <div className="experience-details">
-    <img className="about_icon" src={neuIcon} alt="neuIcon" />
-    <ul>
-      <li>- GPA for the 1st semester: 3.8.</li>
-      <li>- Secured an A- in Professor Amit Shesh's Programming Design Paradigm.</li>
-      <li>- Secured an A in Professor Kathreen Durant's Database Management Systems.</li>
-    </ul>
+  <div class="experience-details">
+    <div class="ag-courses_item">
+      <a href="#" class="ag-courses-item_link">
+        <div class="ag-courses-item_bg"></div>
+        <img className="about_icon_college" src={neuIcon} alt="neuIcon" />
+        <div class="ag-courses-item_title">
+          Northeastern University
+        </div>
+        <div class="ag-courses-item_date-box">
+          <span class="ag-courses-item_date">
+            <ul>
+              <li>- GPA for the 1st semester: 3.8.</li>
+              <li>- Secured an A- in Professor Amit Shesh's Programming Design Paradigm.</li>
+              <li>- Secured an A in Professor Kathreen Durant's Database Management Systems.</li>
+            </ul>
+          </span>
+        </div>
+      </a>
+    </div>
   </div>
 );
 const TimelineItem = ({ icon, content, date }) => (
@@ -111,25 +173,26 @@ const About = () => {
   };
 
   return (
-    <StyleRoot className="aboutContainer">
-    <Timeline activeColor='white'>
-      <div>
-        <NEUPopupContent />
-      </div>
-      <div>
-        <SeniorAccenturePopupContent />
-      </div>
-      <div>
-        <AccentureFullStackDeveloperPopupContent />
-      </div>
-      <div>
-        <UtechInternPopupContent />
-      </div>
-      <div>
-        <YCCEPopupContent />
-      </div>
-    </Timeline>
-  </StyleRoot>
+    <StyleRoot id="about" className="aboutContainer">
+      <h1 className='aboutTitle'>About Me</h1>
+      <Timeline activeColor='black'>
+        <div>
+          <NEUPopupContent />
+        </div>
+        <div>
+          <SeniorAccenturePopupContent />
+        </div>
+        <div>
+          <AccentureFullStackDeveloperPopupContent />
+        </div>
+        <div>
+          <UtechInternPopupContent />
+        </div>
+        <div>
+          <YCCEPopupContent />
+        </div>
+      </Timeline>
+    </StyleRoot>
   );
 };
 

@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Link, Element } from 'react-scroll';
 import "./Header.css";
 
 function Header() {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
 
-  const closeMenu = () => {
+ 
+
+  const closeMenu = (id="home") => {
+    window.scrollTo({
+      top: document.getElementById(id).offsetTop,
+      behavior: 'smooth',
+    });
     setActive("nav__menu");
     setIcon("nav__toggler");
   };
@@ -26,34 +33,34 @@ function Header() {
       </a>
       <ul className={active}>
         <li className="nav__item">
-          <a  className="nav__link" onClick={closeMenu}>
+          <Link to="home" className="nav__link" onClick={() => closeMenu('home')}>
             Home
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a  className="nav__link" onClick={closeMenu}>
+          <Link to="about" className="nav__link" onClick={() => closeMenu('about')}>
             About
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a  className="nav__link" onClick={closeMenu}>
+          <Link to="projects" className="nav__link" onClick={() => closeMenu('projects')}>
             Projects
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a  className="nav__link" onClick={closeMenu}>
+          <Link to="skills" className="nav__link" onClick={() => closeMenu('skills')}>
             Skills
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a className="nav__link" onClick={closeMenu}>
+          <Link to="hobbies" className="nav__link" onClick={() => closeMenu('hobbies')}>
             Hobbies
-          </a>
+          </Link>
         </li>
         <li className="nav__item">
-          <a  className="nav__link" onClick={closeMenu}>
+          <Link to="contact" className="nav__link" onClick={() => closeMenu('contact')}>
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
       <div onClick={navToggle} className={icon}>

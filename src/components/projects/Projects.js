@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import Carousel from '../projectslides/Carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import movieImg from '../../resources/projectimages/movie.png'
+import playerImg from '../../resources/projectimages/player.png'
+import siteImg from '../../resources/projectimages/site.png'
+
+
+import githubIcon from '../../resources/githubicon.png';
 import javaicon from '../../resources/techicon/java.gif'
 import pythonicon from '../../resources/techicon/pythongif.gif'
 import javascripticon from '../../resources/techicon/javascripticon.gif'
@@ -25,6 +33,7 @@ import firebaseicon from '../../resources/skillIcons/realtimeicon.png'
 import sqlicon from '../../resources/skillIcons/sqlicon.png'
 import giticon from '../../resources/skillIcons/githubicon.png'
 import springicon from '../../resources/skillIcons/springicon.png'
+import webIcon from '../../resources/webImg.png'
 
 
 
@@ -109,135 +118,234 @@ const Projects = () => {
 
     const cards = [
         {
-          title: "Build faster",
-          text: "C, C#, C++, Python, Dart, Java, HTML, Javascript, PHP, SQL"
+            title: "Build faster",
+            text: "C, C#, C++, Python, Dart, Java, HTML, Javascript, PHP, SQL"
         },
         {
-          title: "Build f",
-          text:
-            "ROS, OpenCL, CUDA, OpenCV, TensorFlow, Pytorch, .NET, Flutter, Unity, NodeJS, Express"
+            title: "Build f",
+            text:
+                "ROS, OpenCL, CUDA, OpenCV, TensorFlow, Pytorch, .NET, Flutter, Unity, NodeJS, Express"
         },
         {
-          title: "Build a",
-          text: "C, C#, C++, Python, Dart, Java, HTML, Javascript, PHP, SQL"
+            title: "Build a",
+            text: "C, C#, C++, Python, Dart, Java, HTML, Javascript, PHP, SQL"
         },
         {
-          title: "Build d",
-          text:
-            "ROS, OpenCL, CUDA, OpenCV, TensorFlow, Pytorch, .NET, Flutter, Unity, NodeJS, Express"
+            title: "Build d",
+            text:
+                "ROS, OpenCL, CUDA, OpenCV, TensorFlow, Pytorch, .NET, Flutter, Unity, NodeJS, Express"
         }
-      ];
+    ];
 
     return (
-        <div className='bodyContainerProject'>
+        <div id="projects" className='bodyContainerProject'>
             <div className="projects-container">
                 <h1>My Projects</h1>
                 <div className="project-list">
-                    <div className="project-name fromLeft" onClick={() => scrollToProject('project1')}>
-                        <Card
-                            style={{
-                                width: "200px",
-                                height: "180px",
-                                cursor: "pointer"
-                            }}
-                        >
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {"item.title"}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {"item.text"}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                        {/* Image Processing Software
-                        <div>
-                            <img className="actual-icon" src={javaicon} />
-                        </div> */}
+                    <div className="project-name fromLeft">
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={javaimg3} alt="javaprojectimage" />
+                                <h2>Pixel Manipulation</h2>
+                                <p class='description'>An Java based image manipulation software made with strict adherance to MVC principles.</p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        {/* <a href="https://github.com/" class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a> */}
+                                        <span>Code can be made available on request.</span>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={javaicon} />                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <div className="project-name fromRight" onClick={() => scrollToProject('project2')}>
 
-                        {/* <div>
-                            <img className="actual-icon" src={reacticon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
-                            <img className="actual-icon" src={firebaseicon} />
-                        </div> */}
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={handimg1} alt="handwriting image" />
+                                <h2>Handwriting Recognizer and Analysis Tool</h2>
+                                <p class='description'>An pattern analysis based handwriting recognizer tool . </p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://github.com/Sudhanva1999/Handwritting_Classifier" target="_blank" class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={pythonicon} />
+                                        <img className="actual-icon" src={flaskicon} />
+                                        <img className="actual-icon" src={htmlicon} />
+                                        <img className="actual-icon" src={cssicon} />
+                                        <img className="actual-icon" src={booticon} />                                    </div>
 
-                        
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="project-name fromLeft" onClick={() => scrollToProject('project3')}>
-                        RNN Based Handwriting Recognizer and Analysis Tool
-                        <div>
-                            <img className="actual-icon" src={pythonicon} />
-                            <img className="actual-icon" src={flaskicon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
-                        </div>
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={expense1} alt="expense1" />
 
+                                <h2>  Expense Tracker App</h2>
+                                <p class='description'>A react based expense tracker based on  Dinic’s maxflow algorithm. </p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://github.com/Sudhanva1999/expenseBos" target="_blank" class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={pythonicon} />
+                                        <img className="actual-icon" src={flaskicon} />
+                                        <img className="actual-icon" src={htmlicon} />
+                                        <img className="actual-icon" src={cssicon} />
+                                        <img className="actual-icon" src={booticon} />
+                                        <img className="actual-icon" src={firebaseicon} />                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="project-name fromRight" onClick={() => scrollToProject('bostonexpense')}>
-                        Expense Tracker App
-                        <div>
-                            <img className="actual-icon" src={pythonicon} />
-                            <img className="actual-icon" src={flaskicon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
-                            <img className="actual-icon" src={firebaseicon} />
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={portalimg1} alt="portalimg1" />
+
+                                <h2> Paper Presentation Conference Portal</h2>
+                                <p class='description'>A php based CRUD application complete with admin dashboard.</p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://spandanycce.in/" target='_blank' class="github-btn">
+                                            <img className="git-icon" src={webIcon} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={phpicon} />
+                                        <img className="actual-icon" src={htmlicon} />
+                                        <img className="actual-icon" src={cssicon} />
+                                        <img className="actual-icon" src={booticon} />
+                                        <img className="actual-icon" src={sqlicon} />                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="project-name fromLeft" onClick={() => scrollToProject('project4')}>
-                        Paper Presentation Conference Portal
-                        <div>
-                            <img className="actual-icon" src={phpicon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
-                            <img className="actual-icon" src={sqlicon} />
-                        </div>
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={fakeNewsImg1} alt="fakeNewsImg1" />
 
+                                <h2>Fake News Detector</h2>
+                                <p class='description'> A CNN based fake news detector model.  </p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://github.com/" class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={pythonicon} />
+                                        <img className="actual-icon" src={htmlicon} />
+                                        <img className="actual-icon" src={cssicon} />
+                                        <img className="actual-icon" src={booticon} />                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="project-name fromRight" onClick={() => scrollToProject('project5')}>
-                        CNN based Fake News Detector
-                        <div>
-                            <img className="actual-icon" src={pythonicon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={movieImg} alt="NFT" />
+                                <h2>   Moview Review Board</h2>
+                                <p class='description'>A JAVA-REACT Communication POC that communicates via RESTful Apis.</p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://github.com/Sudhanva1999/JavaReacMovies" target='_blank' class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={javaicon} />
+                                        <img className="actual-icon" src={reacticon} />
+                                        <img className="actual-icon" src={springicon} />
+                                        <img className="actual-icon" src={htmlicon} />
+                                        <img className="actual-icon" src={cssicon} />
+                                        <img className="actual-icon" src={booticon} />                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="project-name fromLeft" onClick={() => scrollToProject('reactjava')}>
-                        Moview Review Board (A JAVA-REACT Communication POC)
-                        <div>
-                            <img className="actual-icon" src={javaicon} />
-                            <img className="actual-icon" src={reacticon} />
-                            <img className="actual-icon" src={springicon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={playerImg} alt="NFT" />
+                                <h2> Client Host Multimedia Player</h2>
+                                <p class='description'>A multimedia player capable of controlling client multimedia players accross network and controls like play, pause and vloume controls.</p>
+
+                                <p class='description'> </p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://github.com/" target='_blank' class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={pythonicon} />
+                                        <img className="actual-icon" src={reacticon} />
+                                        <img className="actual-icon" src={javascripticon} />                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="project-name fromRight" onClick={() => scrollToProject('project6')}>
-                        Client Host Multimedia Player
-                        <div>
-                            <img className="actual-icon" src={pythonicon} />
-                            <img className="actual-icon" src={reacticon} />
-                            <img className="actual-icon" src={javascripticon} />
-                        </div>
-                    </div>
-
-                    <div className="project-name fromLeft">
-                        This Site !
-                        <div>
-                            <img className="actual-icon" src={reacticon} />
-                            <img className="actual-icon" src={htmlicon} />
-                            <img className="actual-icon" src={cssicon} />
-                            <img className="actual-icon" src={booticon} />
-                            <img className="actual-icon" src={giticon} />
+                        <div class="nft">
+                            <div class='main'>
+                                <img class='tokenImage' src={siteImg} alt="NFT" />
+                                <h2> This Site !</h2>
+                                <p class='description'>This site made entirely using ReactJS and hosted on github pages.</p>
+                                <div class='tokenInfo'>
+                                    <div class="price">
+                                        <a href="https://github.com/" target='_blank' class="github-btn">
+                                            <img className="git-icon" src={githubIcon} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class='creator'>
+                                    <div class='wrapper'>
+                                        <img className="actual-icon" src={reacticon} />
+                                        <img className="actual-icon" src={htmlicon} />
+                                        <img className="actual-icon" src={cssicon} />
+                                        <img className="actual-icon" src={booticon} />
+                                        <img className="actual-icon" src={giticon} />                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

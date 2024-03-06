@@ -108,7 +108,7 @@ const Hobby = () => {
     };
 
     return (
-        <div className='bodyContainerHob'>
+        <div id="hobbies" className='bodyContainerHob'>
             <div className="hob-container">
                 <h1>Hobbies !</h1>
                 <div className='hob-list'>
@@ -155,7 +155,7 @@ const Hobby = () => {
                                 I find solace and a renewed appreciation for the delicate balance of nature.
                             </p>
                             <br />
-                            <h4>Find all of my photos on my Instagram Page <a href="https://www.instagram.com/hobby_clicks_/" >Here.</a></h4>
+                            <h4>Find all of my photos on my Instagram Page  <button className='hereButton'> <a target = "_blank" href="https://www.instagram.com/hobby_clicks_/" >Here.</a> </button></h4>
                         </div>
                     </div>
                 </div>
@@ -184,7 +184,7 @@ const Hobby = () => {
                                 before my eyes.
                             </p>
                             <br />
-                            <h4>Find all of my paintings on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a></h4>
+                            <h4>Find all of my paintings on my Instagram Page <button className='hereButton'> <a href="https://www.instagram.com/hobby__arts/" target='_blank' >Here.</a> </button></h4>
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@ const Hobby = () => {
                             </p>
                             <br />
                             <h4>Find all of my animations on my Instagram Page <a href="https://www.instagram.com/hobby__arts/" >Here.</a><br />
-                                And also on my Youtube channel <a href="https://www.youtube.com/playlist?list=PLy6_wu5if88X_IHKrSjSDZdiWR73xAQD6" >Here.</a></h4>
+                                And also on my Youtube channel <button className='hereButton'> <a target="_blank" href="https://www.youtube.com/playlist?list=PLy6_wu5if88X_IHKrSjSDZdiWR73xAQD6" >Here.</a></button></h4>
                         </div>
                     </div>
                 </div>
