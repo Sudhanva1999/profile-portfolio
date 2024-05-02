@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/profile-portfolio/static/css/main.dcc39f6c.css",
-    "main.js": "/profile-portfolio/static/js/main.9bce0076.js",
+    "main.js": "/profile-portfolio/static/js/main.6441e0b1.js",
     "static/media/14.JPG": "/profile-portfolio/static/media/14.bf82b779cd6dff4c5f16.JPG",
     "static/media/1.JPG": "/profile-portfolio/static/media/1.e55fb79cee7bbdd528bb.JPG",
     "static/media/10.JPG": "/profile-portfolio/static/media/10.1a8159e363fb46fca300.JPG",
@@ -42,6 +42,7 @@
     "static/media/5_java.png": "/profile-portfolio/static/media/5_java.65f72a6c018add98cb10.png",
     "static/media/profile1.png": "/profile-portfolio/static/media/profile1.c452d4cad43d6c5f6331.png",
     "static/media/6.JPG": "/profile-portfolio/static/media/6.ec0f544b6d5f68ad9b20.JPG",
+    "static/media/pokedex.png": "/profile-portfolio/static/media/pokedex.bda94a30d4d51a89f96d.png",
     "static/media/portal_2.png": "/profile-portfolio/static/media/portal_2.f9b00c3a5f091a4d553e.png",
     "static/media/player.png": "/profile-portfolio/static/media/player.cad23b5f18fc6acf327d.png",
     "static/media/site.png": "/profile-portfolio/static/media/site.82a8d322fcbff17b15af.png",
@@ -51,8 +52,8 @@
     "static/media/javaservletsicon.png": "/profile-portfolio/static/media/javaservletsicon.ca34226ff3be2f6c5fa9.png",
     "static/media/expense_1.png": "/profile-portfolio/static/media/expense_1.eccbe892c5c8e9d855b9.png",
     "static/media/flaskicon.png": "/profile-portfolio/static/media/flaskicon.adf650138d621769ee82.png",
+    "static/media/doubtStack.png": "/profile-portfolio/static/media/doubtStack.3615f96517f05b8fd581.png",
     "static/media/fakenews_2.png": "/profile-portfolio/static/media/fakenews_2.2a21f3399e856e836bfb.png",
-    "static/media/sudhanvaResume.pdf": "/profile-portfolio/static/media/sudhanvaResume.9c3ce69a65e595f61952.pdf",
     "static/media/movie.png": "/profile-portfolio/static/media/movie.ff01f042adb177ac5941.png",
     "static/media/fakenews_1.png": "/profile-portfolio/static/media/fakenews_1.023009a7e5a7a4ca4b46.png",
     "static/media/ycceicon.png": "/profile-portfolio/static/media/ycceicon.eae5a7392528d405ada0.png",
@@ -62,6 +63,7 @@
     "static/media/instagramicon.png": "/profile-portfolio/static/media/instagramicon.e719d8b29f452a16302d.png",
     "static/media/electronicon.png": "/profile-portfolio/static/media/electronicon.6df65b1143312f4b1abb.png",
     "static/media/neuicon.png": "/profile-portfolio/static/media/neuicon.9d59e2cf7f929d4aba96.png",
+    "static/media/sudhanvaResume.pdf": "/profile-portfolio/static/media/sudhanvaResume.3dfc12f039f8ab7194db.pdf",
     "static/media/realtimeicon.png": "/profile-portfolio/static/media/realtimeicon.8c4a9cb88021ee8e9b7e.png",
     "static/media/accentureicon.png": "/profile-portfolio/static/media/accentureicon.6b6b5f0f57b06e2859c3.png",
     "static/media/linkedinicon.png": "/profile-portfolio/static/media/linkedinicon.d21b834035baa551e886.png",
@@ -77,10 +79,10 @@
     "static/media/paintingicon.gif": "/profile-portfolio/static/media/paintingicon.ac5c58fd9bd6e8422fa1.gif",
     "index.html": "/profile-portfolio/index.html",
     "main.dcc39f6c.css.map": "/profile-portfolio/static/css/main.dcc39f6c.css.map",
-    "main.9bce0076.js.map": "/profile-portfolio/static/js/main.9bce0076.js.map"
+    "main.6441e0b1.js.map": "/profile-portfolio/static/js/main.6441e0b1.js.map"
   },
   "entrypoints": [
     "static/css/main.dcc39f6c.css",
-    "static/js/main.9bce0076.js"
+    "static/js/main.6441e0b1.js"
   ]
 }
