@@ -36,6 +36,9 @@ ul{
 }
 
 @media (max-width: 768px) {
+
+
+
   .ag-courses-item_link:hover .ag-courses-item_bg {
     -webkit-transform: scale(20);
     -ms-transform: scale(20);
