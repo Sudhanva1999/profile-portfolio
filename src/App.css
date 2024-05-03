@@ -38,12 +38,28 @@ body {
   height: 100px;
 }
 
-
-.App::-webkit-scrollbar {
-  display: none !important;
+/* App.css */
+::-webkit-scrollbar {
+  width: 5px; 
 }
 
-.App {
--ms-overflow-style: none !important;
-scrollbar-width: none !important;
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(153, 153, 236);
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(78, 78, 171);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 50px; 
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  height: 100px; 
 }

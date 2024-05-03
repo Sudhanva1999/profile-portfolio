@@ -9,6 +9,7 @@ import Projects from './components/projects/Projects';
 import Hobby from './components/hobbies/Hobby';
 
 function App() {
+  
   return (
     <div className="App">
       <Header />
