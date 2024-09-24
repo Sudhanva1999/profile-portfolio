@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Carousel from "../projectslides/Carousel";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import movieImg from "../../resources/projectimages/movie.png";
 import playerImg from "../../resources/projectimages/player.png";
@@ -8,19 +6,6 @@ import siteImg from "../../resources/projectimages/site.png";
 
 import githubIcon from "../../resources/githubicon.png";
 import javaicon from "../../resources/techicon/java.gif";
-import pythonicon from "../../resources/techicon/pythongif.gif";
-import javascripticon from "../../resources/techicon/javascripticon.gif";
-import { makeStyles } from "@material-ui/core/styles";
-import Divider from "@mui/material/Divider";
-import Paper from "@mui/material/Paper";
-import Stack from "@mui/material/Stack";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Card from "react-animated-3d-card";
 
 import reacticon from "../../resources/skillIcons/reacticon.png";
 import htmlicon from "../../resources/skillIcons/htmlicon.png";
@@ -37,73 +22,20 @@ import mongoicon from "../../resources/skillIcons/mongodbIcon.png";
 import springicon from "../../resources/skillIcons/springicon.png";
 import webIcon from "../../resources/webImg.png";
 
-import javaimg1 from "../../resources/projectimages/1_java/1_java.png";
-import javaimg2 from "../../resources/projectimages/1_java/2_java.png";
 import javaimg3 from "../../resources/projectimages/1_java/3_java.png";
-import javaimg4 from "../../resources/projectimages/1_java/4_java.png";
-import javaimg5 from "../../resources/projectimages/1_java/5_java.png";
-import javaimg6 from "../../resources/projectimages/1_java/6_java.png";
 
 import doubtStack from "../../resources/projectimages/doubtStack.png";
 import pokedex from "../../resources/projectimages/pokedex.png";
 
-
 import handimg1 from "../../resources/projectimages/3_hand/hand_1.png";
-import handimg2 from "../../resources/projectimages/3_hand/hand_2.png";
-import handimg3 from "../../resources/projectimages/3_hand/hand_3.png";
-import handimg4 from "../../resources/projectimages/3_hand/hand_4.png";
-import handimg5 from "../../resources/projectimages/3_hand/hand_5.png";
 
 import portalimg1 from "../../resources/projectimages/4_portal/portal_1.png";
-import portalimg2 from "../../resources/projectimages/4_portal/portal_2.png";
-import portalimg3 from "../../resources/projectimages/4_portal/portal_3.png";
 
 import fakeNewsImg1 from "../../resources/projectimages/5_fakeNews/fakenews_1.png";
-import fakeNewsImg2 from "../../resources/projectimages/5_fakeNews/fakenews_2.png";
-import fakeNewsImg3 from "../../resources/projectimages/5_fakeNews/fakenews_3.png";
 
 import expense1 from "../../resources/projectimages/expense/expense_1.png";
-import expense2 from "../../resources/projectimages/expense/expense_2.png";
-import expense3 from "../../resources/projectimages/expense/expense_3.png";
-import expense4 from "../../resources/projectimages/expense/expense_4.png";
 
 import "./Projects.css";
-
-const slides1 = [
-  <img className="project-slides" key={3} src={javaimg3} alt="Slide 3" />,
-  <img className="project-slides" key={1} src={javaimg1} alt="Slide 1" />,
-  <img className="project-slides" key={2} src={javaimg2} alt="Slide 2" />,
-  <img className="project-slides" key={4} src={javaimg4} alt="Slide 4" />,
-  <img className="project-slides" key={5} src={javaimg5} alt="Slide 5" />,
-  <img className="project-slides" key={6} src={javaimg6} alt="Slide 6" />,
-];
-
-const slidesHand = [
-  <img className="project-slides" key={3} src={handimg1} alt="Slide 3" />,
-  <img className="project-slides" key={1} src={handimg2} alt="Slide 1" />,
-  <img className="project-slides" key={2} src={handimg3} alt="Slide 2" />,
-  <img className="project-slides" key={4} src={handimg4} alt="Slide 4" />,
-  <img className="project-slides" key={5} src={handimg5} alt="Slide 5" />,
-];
-
-const portalimgs = [
-  <img className="project-slides" key={3} src={portalimg1} alt="Slide 3" />,
-  <img className="project-slides" key={1} src={portalimg2} alt="Slide 1" />,
-  <img className="project-slides" key={2} src={portalimg3} alt="Slide 2" />,
-];
-
-const fakeNewsImg = [
-  <img className="project-slides" key={1} src={fakeNewsImg1} alt="Slide 3" />,
-  <img className="project-slides" key={2} src={fakeNewsImg2} alt="Slide 1" />,
-  <img className="project-slides" key={3} src={fakeNewsImg3} alt="Slide 2" />,
-];
-
-const expenseImg = [
-  <img className="project-slides" key={1} src={expense1} alt="Slide 3" />,
-  <img className="project-slides" key={2} src={expense2} alt="Slide 1" />,
-  <img className="project-slides" key={3} src={expense3} alt="Slide 2" />,
-  <img className="project-slides" key={4} src={expense4} alt="Slide 4" />,
-];
 
 const Projects = () => {
   const scrollToProject = (projectId) => {
@@ -141,678 +73,290 @@ const Projects = () => {
       <div className="projects-container">
         <h1>My Projects</h1>
         <div className="project-list">
-          <div className="project-name fromLeft">
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={doubtStack} alt="doubtstackImg" />
-                <h2>DoubtStack</h2>
-                <p class="description">
-                  A doubt-solving forum using the MERN stack, complete with a
-                  robust testing suite and Docker containerization, ensuring
-                  seamless deployment.
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/Sudhanva1999/DockerDoubtStack"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
+          <div className="proCard">
+            <img className="tokenImage" src={doubtStack} alt="doubtstackImg" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">DoubtStack</h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/Sudhanva1999/DockerDoubtStack"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
 
-                    <a
-                      href="https://sudhanva1999.github.io/DoubtStackFrontEnd/"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={webIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={reacticon} />
-                    <img className="actual-icon" src={dockericon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={javascripticon} />
-                    <img className="actual-icon" src={mongoicon} />
-                  </div>
-                </div>
+                <a
+                  href="https://sudhanva1999.github.io/DoubtStackFrontEnd/"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={webIcon} />
+                </a>
               </div>
+            </div>
+
+            <p class="description blackText">
+              A doubt-solving forum using the MERN stack, complete with a robust
+              testing suite and Docker containerization, ensuring seamless
+              deployment.
+            </p>
+            <div class="wrapper">
+              <img className="actual-icon" src={reacticon} />
+              <img className="actual-icon" src={dockericon} />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/color/48/javascript--v1.png"
+              />
+              <img className="actual-icon" src={mongoicon} />
             </div>
           </div>
 
-          <div className="project-name fromLeft">
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={javaimg3} alt="javaprojectimage" />
-                <h2>Pixel Manipulation</h2>
-                <p class="description">
-                  An Java based image manipulation software made with strict
-                  adherance to MVC principles.
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <span>Code can be made available on request.</span>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={javaicon} />{" "}
-                  </div>
-                </div>
+          <div className="proCard">
+            <img class="tokenImage" src={javaimg3} alt="javaprojectimage" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">Pixel Manipulation</h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/Sudhanva1999/image-frontend"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
+
+                <a
+                  href="https://sudhanva1999.github.io/image-frontend/"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={webIcon} />
+                </a>
               </div>
+            </div>
+
+            <p class="description blackText">
+              An Java based image manipulation software made with strict
+              adherance to MVC principles.
+              <span>Code can be made available on request.</span>
+            </p>
+            <div class="wrapper">
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/fluency/48/java-coffee-cup-logo.png"
+              />
             </div>
           </div>
 
-          <div
-            className="project-name fromRight"
-            onClick={() => scrollToProject("project2")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img
-                  class="tokenImage"
-                  src={handimg1}
-                  alt="handwriting image"
-                />
-                <h2>Handwriting Recognizer and Analysis Tool</h2>
-                <p class="description">
-                  An pattern analysis based handwriting recognizer tool .{" "}
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/Sudhanva1999/Handwritting_Classifier"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={pythonicon} />
-                    <img className="actual-icon" src={flaskicon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={booticon} />{" "}
-                  </div>
-                </div>
+          <div className="proCard">
+            <img class="tokenImage" src={handimg1} alt="handwriting image" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">
+                Handwriting Recognizer and Analysis Tool
+              </h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/Sudhanva1999/Handwritting_Classifier"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
               </div>
             </div>
-          </div>
-          <div
-            className="project-name fromLeft"
-            onClick={() => scrollToProject("project3")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={expense1} alt="expense1" />
-
-                <h2> Expense Tracker App</h2>
-                <p class="description">
-                  A react based expense tracker based on Dinic’s maxflow
-                  algorithm.{" "}
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/Sudhanva1999/expenseBos"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={pythonicon} />
-                    <img className="actual-icon" src={flaskicon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={booticon} />
-                    <img className="actual-icon" src={firebaseicon} />{" "}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="project-name fromRight"
-            onClick={() => scrollToProject("bostonexpense")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={portalimg1} alt="portalimg1" />
-
-                <h2> Paper Presentation Conference Portal</h2>
-                <p class="description">
-                  A php based CRUD application complete with admin dashboard.
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://spandanycce.in/"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={webIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={phpicon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={booticon} />
-                    <img className="actual-icon" src={sqlicon} />{" "}
-                  </div>
-                </div>
-              </div>
+            <p class="description blackText">
+              An pattern analysis based handwriting recognizer tool .
+            </p>
+            <div class="wrapper">
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/color/48/python--v1.png"
+              />
+              <img className="actual-icon" src={flaskicon} />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
+              <img className="actual-icon" src={booticon} />
             </div>
           </div>
 
-          <div
-            className="project-name fromRight"
-            onClick={() => scrollToProject("project2")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img
-                  class="tokenImage"
-                  src={pokedex}
-                  alt="handwriting image"
-                />
-                <h2>PokeDex</h2>
-                <p class="description">
-                  A vanilla javascript client to consume public open api for Pokemon with a likeness recommendation engine.{" "}
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/Sudhanva1999/supply-frame-pokedex"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={javascripticon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                  </div>
-                </div>
+          <div className="proCard">
+            <img class="tokenImage" src={expense1} alt="expense1" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">Expense Tracker App</h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/Sudhanva1999/expenseBos"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
               </div>
+            </div>
+            <p class="description blackText">
+              A react based expense tracker based on Dinic’s maxflow algorithm.
+            </p>
+            <div class="wrapper">
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/color/48/python--v1.png"
+              />
+              <img className="actual-icon" src={flaskicon} />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
+              <img className="actual-icon" src={booticon} />
+              <img className="actual-icon" src={firebaseicon} />
             </div>
           </div>
 
-          <div
-            className="project-name fromLeft"
-            onClick={() => scrollToProject("project4")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={fakeNewsImg1} alt="fakeNewsImg1" />
+          <div className="proCard">
+            <img class="tokenImage" src={portalimg1} alt="portalimg1" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">
+                Paper Presentation Conference Portal
+              </h2>
+              <div className="linkPro">
+                <a
+                  href="https://spandanycce.in/"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={webIcon} />
+                </a>
+              </div>
+            </div>
+            <p class="description blackText">
+              A php based CRUD application complete with admin dashboard.
+            </p>
+            <div class="wrapper">
+              <img className="actual-icon" src={phpicon} />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
+              <img className="actual-icon" src={booticon} />
+              <img className="actual-icon" src={sqlicon} />
+            </div>
+          </div>
 
-                <h2>Fake News Detector</h2>
-                <p class="description">
-                  {" "}
-                  A CNN based fake news detector model.{" "}
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a href="https://github.com/" class="github-btn">
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={pythonicon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={booticon} />{" "}
-                  </div>
-                </div>
+          <div className="proCard">
+            <img class="tokenImage" src={pokedex} alt="pokedex image" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">PokeDex</h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/Sudhanva1999/supply-frame-pokedex"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
               </div>
             </div>
-          </div>
-          <div
-            className="project-name fromRight"
-            onClick={() => scrollToProject("project5")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={movieImg} alt="NFT" />
-                <h2> Moview Review Board</h2>
-                <p class="description">
-                  A JAVA-REACT Communication POC that communicates via RESTful
-                  Apis.
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/Sudhanva1999/JavaReacMovies"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={javaicon} />
-                    <img className="actual-icon" src={reacticon} />
-                    <img className="actual-icon" src={springicon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={booticon} />{" "}
-                  </div>
-                </div>
-              </div>
+            <p class="description blackText">
+              A vanilla javascript client to consume public open api for Pokemon
+              with a likeness recommendation engine.
+            </p>
+            <div class="wrapper">
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/color/48/javascript--v1.png"
+              />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
             </div>
           </div>
-          <div
-            className="project-name fromLeft"
-            onClick={() => scrollToProject("reactjava")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={playerImg} alt="NFT" />
-                <h2> Client Host Multimedia Player</h2>
-                <p class="description">
-                  A multimedia player capable of controlling client multimedia
-                  players accross network and controls like play, pause and
-                  vloume controls.
-                </p>
 
-                <p class="description"> </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={pythonicon} />
-                    <img className="actual-icon" src={reacticon} />
-                    <img className="actual-icon" src={javascripticon} />{" "}
-                  </div>
-                </div>
+          <div className="proCard">
+            <img class="tokenImage" src={movieImg} alt="NFT" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">Moview Review Board</h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/Sudhanva1999/JavaReacMovies"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
               </div>
             </div>
+            <p class="description blackText">
+              A JAVA-REACT Communication POC that communicates via RESTful Apis.
+            </p>
+            <div class="wrapper">
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/fluency/48/java-coffee-cup-logo.png"
+              />
+              <img className="actual-icon" src={reacticon} />
+              <img className="actual-icon" src={springicon} />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
+              <img className="actual-icon" src={booticon} />
+            </div>
           </div>
-          <div
-            className="project-name fromRight"
-            onClick={() => scrollToProject("project6")}
-          >
-            <div class="nft">
-              <div class="main">
-                <img class="tokenImage" src={siteImg} alt="NFT" />
-                <h2> This Site !</h2>
-                <p class="description">
-                  This site made entirely using ReactJS and hosted on github
-                  pages.
-                </p>
-                <div class="tokenInfo">
-                  <div class="price">
-                    <a
-                      href="https://github.com/"
-                      target="_blank"
-                      class="github-btn"
-                    >
-                      <img className="git-icon" src={githubIcon} />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <div class="creator">
-                  <div class="wrapper">
-                    <img className="actual-icon" src={reacticon} />
-                    <img className="actual-icon" src={htmlicon} />
-                    <img className="actual-icon" src={cssicon} />
-                    <img className="actual-icon" src={booticon} />
-                    <img className="actual-icon" src={giticon} />{" "}
-                  </div>
-                </div>
+
+          <div className="proCard">
+            <img class="tokenImage" src={playerImg} alt="NFT" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">
+                Client Host Multimedia Player
+              </h2>
+              <div className="linkPro">
+                <a
+                  href="https://github.com/"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={githubIcon} />
+                </a>
               </div>
+            </div>
+            <p class="description blackText">
+              A multimedia player capable of controlling client multimedia
+              players accross network and controls like play, pause and vloume
+              controls.
+            </p>
+            <div class="wrapper">
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/color/48/python--v1.png"
+              />
+              <img className="actual-icon" src={reacticon} />
+              <img
+                className="actual-icon"
+                src="https://img.icons8.com/color/48/javascript--v1.png"
+              />
+            </div>
+          </div>
+
+          <div className="proCard">
+            <img class="tokenImage" src={siteImg} alt="NFT" />
+            <div className="proCardTitle">
+              <h2 className="blackText textBlack">This Site !</h2>
+              <div className="linkPro">
+                <a
+                  href="https://sudhanvapaturkar.com/"
+                  target="_blank"
+                  class="github-btn"
+                >
+                  <img className="git-icon" src={webIcon} />
+                </a>
+              </div>
+            </div>
+            <p class="description blackText">
+              This site made entirely using ReactJS and hosted on github pages.
+            </p>
+            <div class="wrapper">
+              <img className="actual-icon" src={reacticon} />
+              <img className="actual-icon" src={htmlicon} />
+              <img className="actual-icon" src={cssicon} />
+              <img className="actual-icon" src={booticon} />
+              <img className="actual-icon" src={giticon} />
             </div>
           </div>
         </div>
-
-        {/* <div id="project1" className="project-section">
-                    <h2>Image Processing Software
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <Carousel slides={slides1} />
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about :
-                                </strong>
-                            </h3>
-                            <p>
-                                An image processing software that implements features like image sharpening,
-                                levels adjustment, color correction and much more, the main focus being
-                                the software's adherance to MVC design pattern along with several industry
-                                standards focusing on maximum scalability and adaptability to new features.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - The software has been written entirely in core java without using any libraries
-                                apart from the jdk. <br />
-                                - The software supports preview functionality to reduce
-                                operation time by operating on a smaller subset of the image matrix.   <br />
-                                - The GUI has been implemented in Swing UI and the communication between GUI and
-                                controller has been designed in a way where it can be easiliy swaped out with any
-                                other UI library.  <br />
-                                - Includes a histogram feature similar to the one in Adobe Photoshop where one can see realtime
-                                changes in image color channels as different operations are performed on it.
-                            </p>
-                            <br />
-                            <h4>Code can be made available on request! <a>Contact me.</a></h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="project2" className="project-section">
-                    <h2>
-                        React Based Complex Team Management Tool
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                The Complex Team Management Tool is a sophisticated React application
-                                designed to streamline and enhance the collaborative workflow within
-                                complex team structures. Built with a focus on incorporating fundamental
-                                React concepts, this app serves as a showcase for various advanced
-                                front-end development techniques. The app also uses data from rest apis
-                                and uses Google's Firestore to store user details.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - Context API for Global State : The Context API is employed to manage global state across components, ensuring a centralized and accessible data source.
-                                This approach simplifies state management in larger applications with complex component hierarchies.<br />
-                                - Hooks : React Hooks, such as useState and useEffect, are used to enhance the functional components with stateful logic.
-                                This modern approach allows functional components to manage state and side effects without the need for class components.<br />
-                                - Optimizing Performance : React's performance optimization strategies, including memoization and PureComponent, are implemented to ensure efficient rendering.
-                                This results in a responsive user interface with minimized unnecessary re-renders.<br />
-                                - Conditional Rendering : React's conditional rendering capabilities are employed to display different views based on the application's state.
-                                This ensures that users are presented with relevant information and features depending on the context of their interactions.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="project3" className="project-section">
-                    <h2>
-                        RNN Based Handwriting Recognizer and Analysis Tool
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <Carousel slides={slidesHand} />
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                The project involves developing a multiclass classifier with the capability
-                                to distinguish between different handwritings and determine the author.
-                                Using an innovative image-based approach, the model achieves over 96%
-                                accuracy in classifying up to 60 authors. The system is designed to be
-                                language-independent, enabling it to analyze various handwriting styles
-                                efficiently.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - High Accuracy: Achieve authorship identification with unparalleled precision, surpassing 96% accuracy using an advanced RNN-based AI model. <br />
-                                - Innovative Approach: Depart from conventional methods by adopting an image-based approach, providing enhanced adaptability and language independence for effective handwriting recognition. <br />
-                                - Efficient Training: Utilize TensorFlow for seamless scalability, enabling training across multiple GPUs, especially advantageous for handling substantial datasets like university assignments. <br />
-                                - Quick Training: Significantly reduce training time to just one hour, showcasing the model's efficiency in rapidly classifying handwriting styles for up to 60 authors, optimizing both processing speed and resource utilization. <br />
-                                - Data Generation Capability: Harness the power of an OpenCV script to automatically scan and generate datasets from handwriting samples, adding versatility to the model's training process. <br />
-                                - Practical Application: Deploy the system in educational environments to validate handwritten assignments, bolstering academic integrity and aiding in plagiarism detection with real-world practicality.<br />
-                                <br />
-                                Github: <a href='https://github.com/Sudhanva1999/Handwritting_Classifier' target='_blank'> Find code here !</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="bostonexpense" className="project-section">
-                    <h2>
-                        Expense Tracker App
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <Carousel slides={expenseImg} />
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                The Expense Tracker Web App is a robust Flask-based application designed to streamline expense
-                                tracking and debt management among user groups. Notably, the application integrates
-                                Google Authentication through Firebase, providing a secure and convenient login process
-                                for users. This proof-of-concept project aims to offer an intuitive platform for users to
-                                log in, add expenses, view a comprehensive dashboard summarizing debts, and generate
-                                insightful reports based on various filters.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - Google Authentication Integration : Leveraging Firebase Authentication, the app ensures secure user login using Google credentials, enhancing user trust and ease of access.<br />
-                                - Dashboard Overview : The dashboard provides users with a clear and concise overview of debts and credits, presenting the total amount owed and owed to the user.<br />
-                                - Expense Management : Users can effortlessly add new expenses, specifying details such as the item, amount, and participants. The app dynamically updates balances to reflect changes accurately.<br />
-                                - Comprehensive Reports : The app empowers users to generate detailed reports based on various filters, including search queries, specific months, years, and transactions paid by a particular user.<br />
-                                - Balanced Deletion Logs : Users have the flexibility to delete specific expense logs, and the app intelligently adjusts balances, ensuring accurate and up-to-date financial records.
-                                <br /><br />
-                                Hosted Site: <a href='https://bostonexpense.onrender.com/' target='_blank'> Find the website here !</a> <br />
-                                (The site is hosted on a free service so give it time to load !)
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="project4" className="project-section">
-                    <h2>
-                        Paper Presentation Conference Portal
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <Carousel slides={portalimgs} />
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                This project involves the creation of a dedicated portal to facilitate the
-                                seamless registration and paper submission process for academics participating
-                                in SPANDAN 2020, an annual paper presentation conference hosted by YCCE, Nagpur
-                                University. The focus is on providing a user-friendly and efficient platform
-                                for academics to engage with the event, streamlining the submission and
-                                registration procedures.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - Efficient Registration : Enable academics to register easily for SPANDAN 2020 through an intuitive and user-friendly portal.<br />
-                                = Seamless Paper Submission : Streamline the paper submission process, offering academics a straightforward and accessible platform for submitting their papers.<br />
-                                - Bootstrap for UI Design : Utilize Bootstrap to ensure a quick, responsive, and visually appealing user interface, enhancing the overall user experience.<br />
-                                - PHP for Fast Backend Processing : Implement PHP for the backend processing to ensure swift and reliable handling of registration and paper submission data.<br />
-                                - MySQL Database Integration : Utilize MySQL database to store participant information securely, providing a structured and scalable solution for data management.<br />
-                                - Data Security : Implement robust security measures to safeguard participant data, ensuring confidentiality and integrity throughout the submission and registration processes.
-                                <br /><br />
-                                Hosted Site: <a href='https://spandanycce.in/' target='_blank'> Find the website here !</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="project5" className="project-section">
-                    <h2>
-                        CNN based Fake News Detector
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <Carousel slides={fakeNewsImg} />
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                The CNN-Based Fake News Detector, focuses on leveraging Convolutional Neural Network (CNN) to
-                                achieve a high level of accuracy in detecting fake news. The project
-                                encompasses several key features aimed at enhancing the efficiency,
-                                real-time processing, and fairness of news article classification.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - High Accuracy Rate : Achieved an impressive accuracy rate of 94.5% in fake news detection, demonstrating the effectiveness of the implemented Convolutional Neural Network (CNN) model. <br />
-                                - User-Friendly Interface : Developed a user-friendly interface using tkinter to facilitate easy interaction with the Fake News Detector, ensuring a seamless experience for users during the classification process. <br />
-                                - RESTful API Integration : Integrated a RESTful API to enable seamless integration of the Fake News Detector into various applications, enhancing accessibility and versatility in deployment. <br />
-                                - Bias Mitigation Techniques : Implemented advanced techniques for bias mitigation, enhancing fairness in the classification of news articles and ensuring a more objective assessment of content. <br />
-                                - Application of Fairness Measures : Incorporated measures to address and minimize biases within the model, promoting fairness and impartiality in the classification of news content. <br />
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="reactjava" className="project-section">
-                    <h2>
-                        Moview Review Board (A JAVA-REACT Communication POC)
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                The Movie Review Web Application serves as a compelling proof of concept, showcasing
-                                the seamless integration of Java Spring Boot on the backend with React on the
-                                frontend through RESTful APIs. This application provides innovative user
-                                experience by offering a platform where users can effortlessly explore movies, contribute
-                                reviews, and access dynamic movie ratings. The project's focal point lies in establishing
-                                efficient communication channels between Java Spring Boot and React, laying the
-                                foundation for robust and scalable full-stack applications.
-
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - Java-React Communication Excellence : Demonstrate a flawless communication mechanism between Java Spring Boot and React, highlighting the versatility and potential for creating sophisticated full-stack applications.<br />
-                                - Interactive Review System : Provide users with an interactive platform to contribute reviews, leveraging the synergies between Java Spring Boot and React to ensure a smooth and responsive review submission process.<br />
-                                - Java Spring Boot Backend Expertise : Utilize Java Spring Boot as the backend technology, showcasing its prowess in handling backend functionalities, including data processing, storage, and intricate business logic.<br />
-                                - React Frontend Excellence : Develop a feature-rich and responsive frontend using React, emphasizing its role in creating a dynamic and engaging user interface that seamlessly communicates with the Java backend.<br />
-                                - RESTful API Prowess : Emphasize the robustness of RESTful APIs in facilitating smooth data exchange between Java Spring Boot and React, a key factor in the success of this proof of concept.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div id="project6" className="project-section">
-                    <h2>
-                        Client Host Media Controller
-                        <button className="back-to-top" onClick={scrollToTop}>
-                            Back to Top
-                        </button>
-                    </h2>
-                    <div>
-                        <div>
-                            <br />
-                            <h3>
-                                <strong>
-                                    What the project is about:
-                                </strong>
-                            </h3>
-                            <p>
-                                The Media Player Control Software is a client-server application developed using Python
-                                socket programming and React Native, designed to enable seamless control of media
-                                player functions across a network. The project, which involves the integration of
-                                various technologies, showcases versatility and efficiency in managing servers and
-                                facilitating remote media control.
-                            </p>
-                            <br />
-                            <p>
-                                <strong>Key Features:</strong> <br />
-                                - Cross-Platform Control : Developed a client-server architecture using Python socket programming and React Native, allowing users to control media player functions remotely across different platforms.<br />
-                                - Technology Integration : Leveraged a diverse range of technologies, including React Native, Electron, Python, and Node.js, to create a comprehensive solution for building and managing servers, ensuring optimal performance and compatibility.<br />
-                                - React Native for Mobile Control : Implemented React Native for the client-side application, providing a responsive and platform-independent mobile interface for users to control media playback.<br />
-                                - Electron for Desktop Control : Utilized Electron to create a robust desktop application for controlling media player functions, ensuring a consistent and user-friendly experience across various desktop environments.<br />
-                                - Python Socket Programming : Employed Python socket programming to establish a reliable communication channel between the client and server, enabling real-time control of media player functions.<br />
-                                - Node.js Server Management : Integrated Node.js for efficient server management, ensuring smooth communication between the client and server components of the application.
-                            </p>
-                        </div>
-                    </div>
-                </div> */}
       </div>
     </div>
   );

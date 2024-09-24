@@ -18,6 +18,48 @@
   }
 }
 
+.proCard {
+  margin: 20px;
+  background-color: white;
+  height: 600px;
+  width: 400px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+
+.proCardTitle{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.linkPro {
+  margin-top: 5%;
+}
+.blackText {
+  color: black;
+}
+.tokenImage {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+  border-radius: 0.9rem;
+  max-width: 90%;
+  object-fit: cover;
+  margin-top: 5%;
+
+}
+
+.description {
+  padding: 30px;
+}
+
+.textBlack {
+  display: inline-blo;
+  padding-left: 30px;
+  padding-top: 20px;
+  text-align: left;
+  font-weight: 900;
+}
+
 .bodyContainerProject {
   padding-top: 30px;
   width: 100%;
@@ -33,6 +75,7 @@
 }
 
 .git-icon {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
   height: 25px;
   transition: transform 0.1s ease-in-out;
   border-radius: 5px;
@@ -54,7 +97,7 @@
 .project-list {
   margin-bottom: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .project-icon {
@@ -123,59 +166,29 @@
 }
 
 @media screen and (max-width: 768px) {
-  .projects-container {
-    max-width: 370px;
+  .proCard {
+    width: 350px;
+    margin: 5px;
   }
-
-  .actual-icon {
-    float: none;
-  }
-
-  .projects-container > h1 {
-    font-size: 40px;
-  }
-
-  .project-slides {
-    max-height: 230px;
-    max-width: 400px;
-  }
-
-  .bodyContainerProject {
-    max-width: 100%;
-  }
-  .project-name {
-    max-width: 350px !important;
-  }
-
   .project-list {
     grid-template-columns: repeat(1, 1fr);
-    max-width: 350px !important;
   }
+  
 }
 
-.tokenImage {
-  border-radius: 0.5rem;
-  max-width: 100%;
-  object-fit: cover;
-  height: 200px;
 
-}
 
 
 .github-btn {
-  display: inline-block;
+  display: inline;
   background-color: transparent;
   color: #333333;
-
+  margin-right: 10px;
   padding: 5px;
   font-size: 16px;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   text-align: center;
-}
-
-.github-btn i {
-  margin-right: 10px;
 }
 
 .nft {
@@ -214,10 +227,7 @@
     margin-left: auto;
     margin-right: auto;
     min-height: 500px;
-    .description {
-      margin: 0.5rem 0;
-      color: #e4f1fe;
-    }
+
     .tokenInfo {
       display: flex;
       justify-content: space-between;
