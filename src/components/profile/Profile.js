@@ -29,6 +29,7 @@ const Profile = () => {
           className="profile-picture"
           src={profilePic}
           alt="Profile"
+           fetchpriority="high"
         />
       </div>
       <div className="profile-info">
