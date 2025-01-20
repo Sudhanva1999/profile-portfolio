@@ -27,9 +27,9 @@ const Contact = () => {
           <img className="social-iconC" src={linkedinIcon} alt="LinkedIn" />
           <span>LinkedIn</span>
         </a>
-        <a className='social-linkC' href="mailto:paturkar.s@northeastern.edu">
+        <a className='social-linkC' href="mailto:sudhanvawork@outlook.com">
           <img className="social-iconC" src={emailIcon} alt="Email" />
-          <span>paturkar.s@northeastern.edu</span>
+          <span>sudhanvawork@outlook.com</span>
         </a>
         <a className='social-linkC' href="tel:+617-785-7242">
           <img className="social-iconC" src={phoneIcon} alt="Phone" />
