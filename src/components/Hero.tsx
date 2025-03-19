@@ -110,7 +110,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
             <div className="w-80 h-80 md:w-96 md:h-96 relative z-10">
               <img
-                src="/public/images/profile.png"
+                src="/images/profile.png"
                 alt="Sudhanva Paturkar"
                 className="w-full h-full object-cover customShadow"
               />
