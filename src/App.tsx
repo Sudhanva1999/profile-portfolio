@@ -1,3 +1,4 @@
+// Updated App.tsx with Analytics Route and Dev Environment Support
 import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -7,7 +8,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Analytics from "./pages/Analytics"; // Import the Analytics page
 import TypingLoader from "./components/TypingLoader";
+// Import analytics initialization
+import { initAnalytics } from "./lib/analytics-init";
+
+// Define API endpoints for different environments
+const API_ENDPOINTS = {
+  development: {
+    saveUrl: 'http://localhost:3001/save-analytics',
+    summaryUrl: 'http://localhost:3001/get-analytics-summary'
+  },
+  production: {
+    saveUrl: 'https://your-api-gateway-url/prod/save-analytics',
+    summaryUrl: 'https://your-api-gateway-url/prod/get-analytics-summary'
+  }
+};
+
+// Get current environment
+const currentEnv = process.env.NODE_ENV || 'development';
+const endpoints = API_ENDPOINTS[currentEnv === 'production' ? 'production' : 'development'];
 
 const queryClient = new QueryClient();
 
@@ -16,6 +36,22 @@ const App = () => {
   
   useEffect(() => {
     const loadApp = async () => {
+      // Check if analytics is enabled in localStorage (default to true if not set)
+      const analyticsEnabled = localStorage.getItem('analytics-enabled') !== 'false';
+      
+      // Initialize analytics tracking if enabled
+      if (analyticsEnabled) {
+        // Pass the appropriate endpoints based on the environment
+        initAnalytics(
+          true, // Always enable if the localStorage flag is true
+          endpoints
+        );
+        
+        console.log(`Analytics initialized in ${currentEnv} environment with endpoints:`, endpoints);
+      } else {
+        console.log("Analytics tracking is disabled");
+      }
+      
       // Create a promise that resolves when the DOM is completely loaded
       const domLoaded = new Promise<void>(resolve => {
         if (document.readyState === 'complete') {
@@ -86,6 +122,7 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/admin/analytics" element={<Analytics />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
