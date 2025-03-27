@@ -1,4 +1,3 @@
-// Updated App.tsx with Analytics Route and Dev Environment Support
 import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -8,12 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Analytics from "./pages/Analytics"; // Import the Analytics page
+import Analytics from "./pages/Analytics"; 
 import TypingLoader from "./components/TypingLoader";
-// Import analytics initialization
 import { initAnalytics } from "./lib/analytics-init";
 
-// Define API endpoints for different environments
+
 const API_ENDPOINTS = {
   development: {
     saveUrl: 'http://localhost:3001/save-analytics',
@@ -36,10 +34,8 @@ const App = () => {
   
   useEffect(() => {
     const loadApp = async () => {
-      // Check if analytics is enabled in localStorage (default to true if not set)
       const analyticsEnabled = localStorage.getItem('analytics-enabled') !== 'false';
       
-      // Initialize analytics tracking if enabled
       if (analyticsEnabled) {
         // Pass the appropriate endpoints based on the environment
         initAnalytics(
@@ -52,7 +48,6 @@ const App = () => {
         console.log("Analytics tracking is disabled");
       }
       
-      // Create a promise that resolves when the DOM is completely loaded
       const domLoaded = new Promise<void>(resolve => {
         if (document.readyState === 'complete') {
           resolve();
@@ -61,20 +56,13 @@ const App = () => {
         }
       });
       
-      // Create a promise that resolves when initial route components are loaded
       const componentsLoaded = new Promise<void>(resolve => {
-        // Check if Index component is loaded
         const checkComponentsLoaded = () => {
           if (Index && NotFound) {
             resolve();
           }
         };
-        
-        // Components might already be loaded
         checkComponentsLoaded();
-        
-        // If not already loaded, we'll check again after a small delay
-        // This is a fallback in case component imports are still resolving
         setTimeout(checkComponentsLoaded, 100);
       });
       
