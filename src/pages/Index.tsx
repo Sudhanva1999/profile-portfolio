@@ -1,5 +1,4 @@
-
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -8,8 +7,11 @@ import Skills from '@/components/Skills';
 import Hobbies from '@/components/Hobbies';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import AnalyticsSection from '@/pages/Analytics';
 
 const Index = () => {
+  const [showAnalytics, setShowAnalytics] = useState(false);
+
   useEffect(() => {
     // Initialize intersection observer for scroll animations
     const observer = new IntersectionObserver(
@@ -31,18 +33,46 @@ const Index = () => {
     };
   }, []);
 
+  const toggleAnalytics = () => {
+    setShowAnalytics(!showAnalytics);
+  };
+
+  // Check if there's an analytics hash in the URL on mount
+  useEffect(() => {
+    if (window.location.hash === '#analytics') {
+      setShowAnalytics(true);
+    }
+  }, []);
+
+  // Update URL when analytics is shown/hidden
+  useEffect(() => {
+    if (showAnalytics) {
+      window.history.pushState(null, '', '#analytics');
+    } else {
+      if (window.location.hash === '#analytics') {
+        window.history.pushState(null, '', window.location.pathname);
+      }
+    }
+  }, [showAnalytics]);
+
   return (
     <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Hobbies />
-        <Contact />
-      </main>
-      <Footer />
+      {showAnalytics ? (
+        <AnalyticsSection onClose={() => setShowAnalytics(false)} />
+      ) : (
+        <>
+          <Navbar onShowAnalytics={() => setShowAnalytics(true)} />
+          <main>
+            <Hero />
+            <About />
+            <Projects />
+            <Skills />
+            <Hobbies />
+            <Contact />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

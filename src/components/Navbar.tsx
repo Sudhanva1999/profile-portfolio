@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, BarChart2 } from 'lucide-react';
 import { ThemeContext } from '@/contexts/ThemeContext';
 import { cn } from '@/lib/utils';
 
@@ -13,7 +13,7 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onShowAnalytics }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
@@ -100,6 +100,17 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            
+            {/* Analytics Button */}
+            <button 
+              onClick={onShowAnalytics} 
+              className="nav-link flex items-center gap-1"
+              aria-label="Analytics"
+            >
+              <BarChart2 className="w-4 h-4" />
+              <span>Analytics</span>
+            </button>
+            
             <button 
               onClick={toggleTheme} 
               className="ml-4 p-2 rounded-full hover:bg-background/80 transition-colors"
@@ -179,6 +190,23 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
+              
+              {/* Analytics Button on Mobile */}
+              <button
+                className={cn(
+                  "text-xl py-2 px-4 rounded-md transition-colors flex items-center gap-2", 
+                  theme === 'dark' ? "text-gray-300" : "text-gray-700"
+                )}
+                onClick={() => {
+                  closeMenu();
+                  setTimeout(() => {
+                    onShowAnalytics();
+                  }, 100);
+                }}
+              >
+                <BarChart2 className="w-5 h-5" />
+                <span>Analytics</span>
+              </button>
             </div>
           </div>
         </div>

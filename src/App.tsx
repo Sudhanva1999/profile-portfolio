@@ -110,7 +110,6 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/admin/analytics" element={<Analytics />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

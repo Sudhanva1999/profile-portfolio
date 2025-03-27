@@ -1,15 +1,20 @@
-// src/pages/Analytics.tsx
+// src/components/AnalyticsSection.tsx
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
-import { AlertCircle, Lock } from 'lucide-react';
+import { AlertCircle, Lock, ArrowLeft } from 'lucide-react';
 import AnalyticsDashboard from '@/components/Dashboard';
 
-const ADMIN_PASSWORD = 'portfolio-admin';
+// Get password from environment variables, with fallback
+const ADMIN_PASSWORD = import.meta.env.VITE_ANALYTICS_PASSWORD || 'portfolio-admin';
 
-const AnalyticsPage = () => {
+interface AnalyticsSectionProps {
+  onClose: () => void;
+}
+
+const AnalyticsSection: React.FC<AnalyticsSectionProps> = ({ onClose }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -23,6 +28,17 @@ const AnalyticsPage = () => {
     if (authToken === 'true') {
       setIsAuthenticated(true);
     }
+    
+    // Scroll to top when analytics panel opens
+    window.scrollTo(0, 0);
+    
+    // Disable scrolling on body
+    document.body.style.overflow = 'hidden';
+    
+    // Re-enable scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, []);
 
   const handleLogin = () => {
@@ -50,9 +66,22 @@ const AnalyticsPage = () => {
     window.location.reload();
   };
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('analytics-auth');
+    setIsAuthenticated(false);
+  };
+
   if (!isAuthenticated) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-background p-4">
+      <div className="fixed inset-0 z-[9999] bg-background flex items-center justify-center p-4">
+        <button 
+          onClick={onClose}
+          className="absolute top-4 left-4 p-2 rounded-full hover:bg-background/80 transition-colors flex items-center gap-2"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Back to Portfolio</span>
+        </button>
+        
         <Card className="w-full max-w-md p-6">
           <div className="text-center mb-6">
             <Lock className="h-12 w-12 mx-auto mb-4 text-primary" />
@@ -78,6 +107,7 @@ const AnalyticsPage = () => {
                 onKeyDown={handleKeyDown}
                 className="w-full p-2 rounded-md border border-input bg-background"
                 placeholder="Enter admin password"
+                autoFocus
               />
             </div>
             
@@ -91,10 +121,20 @@ const AnalyticsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="bg-card border-b border-border p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Portfolio Analytics</h1>
+    <div className="fixed inset-0 z-[9999] bg-background overflow-auto">
+      <header className="sticky top-0 bg-card border-b border-border p-4 z-10">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={onClose}
+              className="p-2 rounded-full hover:bg-background/80 transition-colors"
+              aria-label="Back to Portfolio"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <h1 className="text-2xl font-bold">Portfolio Analytics</h1>
+          </div>
+          
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Switch 
@@ -106,10 +146,7 @@ const AnalyticsPage = () => {
                 {analyticsEnabled ? 'Analytics Enabled' : 'Analytics Disabled'}
               </Label>
             </div>
-            <Button variant="outline" onClick={() => {
-              sessionStorage.removeItem('analytics-auth');
-              setIsAuthenticated(false);
-            }}>
+            <Button variant="outline" onClick={handleLogout}>
               Logout
             </Button>
           </div>
@@ -123,4 +160,4 @@ const AnalyticsPage = () => {
   );
 };
 
-export default AnalyticsPage;
+export default AnalyticsSection;
