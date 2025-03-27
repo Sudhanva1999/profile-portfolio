@@ -18,8 +18,8 @@ const API_ENDPOINTS = {
     summaryUrl: 'http://localhost:3001/get-analytics-summary'
   },
   production: {
-    saveUrl: 'https://your-api-gateway-url/prod/save-analytics',
-    summaryUrl: 'https://your-api-gateway-url/prod/get-analytics-summary'
+    saveUrl: 'https://cquvi9wdo3.execute-api.us-east-1.amazonaws.com/prod/analytics',
+    summaryUrl: 'https://cquvi9wdo3.execute-api.us-east-1.amazonaws.com/prod/analytics/summary'
   }
 };
 
