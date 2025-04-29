@@ -15,7 +15,10 @@ interface Project {
   image: string;
   githubUrl?: string;
   liveUrl?: string;
+  devpostUrl?: string;
   technologies: Technology[];
+  isHackathonWinner?: boolean;
+  categories: ProjectCategory[];
 }
 
 type ProjectCategory = 'All' | 'AI/Machine Learning' | 'Fullstack' | 'Cloud' | 'Gen AI/LLMs' ;
@@ -35,6 +38,7 @@ export default function Projects() {
         { name: 'Docker', icon: 'https://cdn.worldvectorlogo.com/logos/docker.svg' },
         { name: 'MUI', icon: 'https://cdn.worldvectorlogo.com/logos/material-ui-1.svg' },
       ],
+      categories: ['Fullstack', 'Cloud'],
     },
     {
       title: 'LLM based Language Learning Portal',
@@ -46,6 +50,32 @@ export default function Projects() {
         { name: 'AWS Bedrock', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', strat: 'dark' },
         { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
       ],
+      categories: ['Fullstack', 'Gen AI/LLMs', 'Cloud'],
+    },
+    {
+      title: 'Pixel Manipulation',
+      description: 'An Java based image manipulation software made with strict adherence to MVC principles. Code can be made available on request.',
+      image: 'images/project/java.png',
+      technologies: [
+        { name: 'Java', icon: 'https://cdn.worldvectorlogo.com/logos/java-4.svg' },
+      ],
+      categories: ['Fullstack'],
+    },
+
+    {
+      title: 'Study Buddy',
+      description: 'An AI-powered study assistant that transforms educational videos and documents into interactive learning tools. It extracts key insights to generate detailed notes, flashcards, and dynamic visual mind maps.',
+      image: 'images/project/study.png',
+      githubUrl: 'https://github.com/Sudhanva1999/StudyBuddyHackathon',
+      devpostUrl: 'https://devpost.com/software/studybuddy-ly7g2z',
+      isHackathonWinner: true,
+      technologies: [
+        { name: 'Python', icon: 'https://cdn.worldvectorlogo.com/logos/python-5.svg' },
+        { name: 'MongoDB', icon: 'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg' },
+        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
+        { name: 'Google Gemeni', icon: 'https://cdn.worldvectorlogo.com/logos/google-bard-1.svg' },
+      ],
+      categories: ['AI/Machine Learning', 'Gen AI/LLMs', 'Fullstack'],
     },
     {
       title: 'LLM based Language Listening App',
@@ -57,6 +87,7 @@ export default function Projects() {
         { name: 'AWS Bedrock', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', strat: 'dark' },
         { name: 'Streamlit', icon: 'icons/Streamlit.png' },
       ],
+      categories: ['Gen AI/LLMs', 'Cloud'],
     },
     {
       title: 'LLM based Language Writing App',
@@ -68,6 +99,7 @@ export default function Projects() {
         { name: 'AWS Bedrock', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', strat: 'dark' },
         { name: 'Streamlit', icon: 'icons/Streamlit.png' },
       ],
+      categories: ['Gen AI/LLMs', 'Cloud'],
     },
     {
       title: 'LLM based Language Speaking App',
@@ -79,14 +111,7 @@ export default function Projects() {
         { name: 'AWS Bedrock', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', strat: 'dark' },
         { name: 'Streamlit', icon: 'icons/Streamlit.png' },
       ],
-    },
-    {
-      title: 'Pixel Manipulation',
-      description: 'An Java based image manipulation software made with strict adherence to MVC principles. Code can be made available on request.',
-      image: 'images/project/java.png',
-      technologies: [
-        { name: 'Java', icon: 'https://cdn.worldvectorlogo.com/logos/java-4.svg' },
-      ],
+      categories: ['Gen AI/LLMs', 'Cloud'],
     },
     {
       title: 'Handwriting Recognizer',
@@ -98,6 +123,7 @@ export default function Projects() {
         { name: 'TensorFlow', icon: 'https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg' },
         { name: 'Bootstrap', icon: 'https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg' },
       ],
+      categories: ['AI/Machine Learning'],
     },
     {
       title: 'Expense Tracker App',
@@ -110,6 +136,7 @@ export default function Projects() {
         { name: 'Bootstrap', icon: 'https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg' },
         { name: 'Firebase', icon: 'https://cdn.worldvectorlogo.com/logos/firebase-1.svg' },
       ],
+      categories: ['Fullstack', 'Cloud'],
     },
     {
       title: 'Paper Presentation Conference Portal',
@@ -121,6 +148,7 @@ export default function Projects() {
         { name: 'Bootstrap', icon: 'https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg' },
         { name: 'MySql', icon: 'https://cdn.worldvectorlogo.com/logos/mysql-logo-pure.svg' , strat: 'dark' },
       ],
+      categories: ['Fullstack'],
     },
     {
       title: 'PokeDex',
@@ -132,6 +160,7 @@ export default function Projects() {
         { name: 'HTML', icon: 'https://cdn.worldvectorlogo.com/logos/html-1.svg' },
         { name: 'CSS', icon: 'https://cdn.worldvectorlogo.com/logos/css-3.svg' },
       ],
+      categories: ['Fullstack'],
     },
 
     {
@@ -145,6 +174,7 @@ export default function Projects() {
         { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
         { name: 'MongoDB', icon: 'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg' },
       ],
+      categories: ['Fullstack'],
     },
 
     {
@@ -156,6 +186,7 @@ export default function Projects() {
         { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
         { name: 'Javascript', icon: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg' },
       ],
+      categories: ['Fullstack'],
     },
 
     {
@@ -169,36 +200,21 @@ export default function Projects() {
         { name: 'CSS', icon: 'https://cdn.worldvectorlogo.com/logos/css-3.svg' },
         { name: 'Github', icon: 'https://cdn.worldvectorlogo.com/logos/github-icon.svg', strat: 'dark' },
       ],
+      categories: ['Fullstack'],
     },
   ];
   
   // AI/Machine Learning projects
-  const aiProjects: Project[] = [allProjects[6]];
+  const aiProjects: Project[] = allProjects.filter(project => project.categories.includes('AI/Machine Learning'));
   
   // Fullstack projects
-  const fullstackProjects: Project[] = [
-    allProjects[0],
-    allProjects[1],
-    allProjects[7],
-    allProjects[8],
-    allProjects[9],
-    allProjects[10],
-  ];
+  const fullstackProjects: Project[] = allProjects.filter(project => project.categories.includes('Fullstack'));
   
   // Cloud projects
-  const cloudProjects: Project[] = [
-    allProjects[2],
-    allProjects[3],
-    allProjects[4],
-  ];
+  const cloudProjects: Project[] = allProjects.filter(project => project.categories.includes('Cloud'));
   
   // Gen AI/LLMs projects
-  const genAiProjects: Project[] = [
-    allProjects[1],
-    allProjects[2],
-    allProjects[3],
-    allProjects[4],
-  ];
+  const genAiProjects: Project[] = allProjects.filter(project => project.categories.includes('Gen AI/LLMs'));
 
   const tabs: ProjectCategory[] = ['All', 'AI/Machine Learning', 'Fullstack', 'Cloud', 'Gen AI/LLMs'];
   
@@ -206,25 +222,10 @@ export default function Projects() {
   const [currentProjects, setCurrentProjects] = useState<Project[]>(allProjects);
 
   const getProjectsForTab = (tab: ProjectCategory): Project[] => {
-    switch(tab) {
-      case 'All':
-        console.log("all projects - ", allProjects);
-        return allProjects;
-      case 'AI/Machine Learning':
-        console.log("aiProjects projects - ", aiProjects);
-        return aiProjects;
-      case 'Fullstack':
-        console.log("fullstackProjects projects - ", fullstackProjects);
-        return fullstackProjects;
-      case 'Cloud':
-        console.log("cloudProjects projects - ", cloudProjects);
-        return cloudProjects;
-      case 'Gen AI/LLMs':
-        console.log("genAiProjects projects - ", genAiProjects);
-        return genAiProjects;
-      default:
-        return allProjects;
+    if (tab === 'All') {
+      return allProjects;
     }
+    return allProjects.filter(project => project.categories.includes(tab));
   };
 
   useEffect(() => {
@@ -262,7 +263,7 @@ export default function Projects() {
         </div>
         
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {currentProjects.length > 0 ? (
             currentProjects.map((project, index) => (
               <ProjectCard 
@@ -272,8 +273,10 @@ export default function Projects() {
                 image={project.image}
                 githubUrl={project.githubUrl}
                 liveUrl={project.liveUrl}
+                devpostUrl={project.devpostUrl}
                 technologies={project.technologies}
                 reversed={index % 2 !== 0}
+                isHackathonWinner={project.isHackathonWinner}
               />
             ))
           ) : (

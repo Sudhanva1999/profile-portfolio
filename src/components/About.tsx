@@ -96,6 +96,41 @@ export default function About() {
     },
   ];
 
+  const achievements = [
+    {
+      title: "SharkHack Hackathon Winner",
+      company: "Simmons University",
+      date: "2025",
+      description: "Received the prestigious Pinnacle Award for outstanding contributions to Product Engineering in FY22-Q4, recognizing exceptional performance and innovation in software development.",
+      icon: <img src="icons/shark.png" alt={"SharkHack Icon"} className="filter aboutIcons" />,
+      technologies: ["Product Engineering", "Innovation", "LLMS", "Technical Excellence", "Hackathon", "The Moonshot Venture Award"]
+    },
+    {
+      title: "Accenture Pinnacle Award",
+      company: "Accenture",
+      date: "2022",
+      description: "Received the prestigious Pinnacle Award for outstanding contributions to Product Engineering in FY22-Q4, recognizing exceptional performance and innovation in software development.",
+      icon: <img src="icons/accenture.png" alt={"Accenture Icon"} className="filter aboutIcons" />,
+      technologies: ["Product Engineering", "Innovation", "Leadership", "Technical Excellence"]
+    },
+    {
+      title: "Best Intern Award",
+      company: "Sacchidanand Utec",
+      date: "2019",
+      description: "Recognized for exceptional performance and leadership during internship, successfully leading a team of 10 interns and delivering high-quality solutions for smart home automation.",
+      icon: <img src="images/utechThumb.png" alt={"Accenture Icon"} className="filter aboutIcons" />,
+      technologies: ["Leadership", "Project Management", "Technical Innovation", "Team Collaboration"]
+    },
+    {
+      title: "Semester Topper",
+      company: "Nagpur University",
+      date: "2017-2021",
+      description: "Achieved top academic performance twice during undergraduate studies, maintaining a CGPA of 9.02 while actively participating in technical workshops and leadership roles.",
+      icon: <img src="icons/ycceIcon.png" alt={"NEU Icon"} className="filter aboutIcons " />,
+      technologies: ["Academic Excellence", "Technical Leadership", "Workshop Organization", "Student Mentorship"]
+    }
+  ];
+
   return (
     <section id="about" className="section min-h-0 h-auto w-full">
       <div className="container mx-auto py-12 px-4">
@@ -114,6 +149,19 @@ export default function About() {
               {workExperience.map((job, index) => (
                 <TimelineEvent key={index} {...job} />
               ))}
+            </div>
+
+            <div className="animate-on-scroll customTopPadding">
+              <div className="flex items-center gap-2 mb-6">
+                <Award className="text-primary" />
+                <h3 className="text-2xl font-bold">Achievements</h3>
+              </div>
+              
+              <div className="relative mt-8">
+                {achievements.map((achievement, index) => (
+                  <TimelineEvent key={index} {...achievement} />
+                ))}
+              </div>
             </div>
           </div>
           
@@ -142,6 +190,8 @@ export default function About() {
                   <TimelineEvent key={index} {...edu} />
                 ))}
               </div>
+
+
             </div>
           </div>
         </div>
