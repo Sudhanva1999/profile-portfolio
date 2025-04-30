@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface TimelineEventProps {
@@ -10,6 +10,10 @@ interface TimelineEventProps {
   description: string;
   logo?: string;
   technologies?: string[];
+  button?: {
+    text: string;
+    link: string;
+  };
 }
 
 export default function TimelineEvent({
@@ -20,6 +24,7 @@ export default function TimelineEvent({
   description,
   logo,
   technologies = [],
+  button,
 }: TimelineEventProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [contentHeight, setContentHeight] = useState("0px");
@@ -76,6 +81,18 @@ export default function TimelineEvent({
           
           <div className="flex items-center gap-2 mt-1 sm:mt-0">
             <span className="text-sm text-foreground/60 whitespace-nowrap">{date}</span>
+            {button && !isExpanded && (
+              <a 
+                href={button.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary/70 hover:text-primary transition-colors ml-2"
+                onClick={(e) => e.stopPropagation()}
+                aria-label={`Open ${button.text}`}
+              >
+                <ExternalLink size={16} />
+              </a>
+            )}
             <button 
               className="text-primary/70 hover:text-primary transition-colors ml-auto sm:ml-0"
               aria-label={isExpanded ? "Collapse details" : "Expand details"}
@@ -103,6 +120,21 @@ export default function TimelineEvent({
             )}
             
             <p className="text-sm text-foreground/80 mb-4">{description}</p>
+            
+            {button && isExpanded && (
+              <div className="mb-4">
+                <a 
+                  href={button.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 text-sm bg-primary/10 text-primary rounded-full hover:bg-primary/20 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {button.text}
+                  <ExternalLink size={14} />
+                </a>
+              </div>
+            )}
             
             {technologies.length > 0 && (
               <div className="flex flex-wrap gap-2 pb-1">
