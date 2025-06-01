@@ -25,6 +25,18 @@ export default function About() {
 
   const workExperience = [
     {
+      title: 'Software Engineer',
+      company: 'Adobe',
+      date: 'May 2025 - Present',
+      description: 'As a Software Engineer at Adobe, I am working on developing and maintaining critical components of Adobe\'s document processing solutions. My role involves collaborating with cross-functional teams to design and implement scalable features, optimize system performance, and ensure high-quality code delivery. I am actively contributing to the enhancement of Adobe\'s document processing capabilities while maintaining a strong focus on user experience and system reliability.',
+      icon: <img src="icons/adobe.svg" alt={"Adobe Icon"} className="filter" />,
+      technologies: ['Java', 'Spring Boot', 'React', 'Microservices', 'Cloud Architecture', 'System Design', 'Performance Optimization', 'Code Quality', 'Team Collaboration'],
+      button: {
+        text: 'View Employer',
+        link: 'https://www.adobe.com'
+      }
+    },
+    {
       title: 'Software Engineering Intern',
       company: 'Adobe',
       date: 'Jun 2023 - Aug 2023',
@@ -207,31 +219,31 @@ export default function About() {
 
   return (
     <section id="about" className="section min-h-0 h-auto w-full">
-      <div className="container mx-auto py-12 px-4">
-        <div className="mb-16 animate-on-scroll">
-          <h2 className="section-heading">About Me</h2>
+      <div className="container mx-auto py-8 sm:py-12 px-3 sm:px-4">
+        <div className="mb-10 sm:mb-16 animate-on-scroll">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center relative">About Me</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-16">
           <div className="animate-on-scroll">
-            <div className="flex items-center gap-2 mb-6">
-              <Briefcase className="text-primary" />
-              <h3 className="text-2xl font-bold">Work Experience</h3>
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+              <Briefcase className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
+              <h3 className="text-xl sm:text-2xl font-bold">Work Experience</h3>
             </div>
             
-            <div className="relative mt-8">
+            <div className="relative mt-6 sm:mt-8">
               {workExperience.map((job, index) => (
                 <TimelineEvent key={index} {...job} />
               ))}
             </div>
 
             <div className="animate-on-scroll customTopPadding">
-              <div className="flex items-center gap-2 mb-6">
-                <Award className="text-primary" />
-                <h3 className="text-2xl font-bold">Achievements</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <Award className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
+                <h3 className="text-xl sm:text-2xl font-bold">Achievements</h3>
               </div>
               
-              <div className="relative mt-8">
+              <div className="relative mt-6 sm:mt-8">
                 {achievements.map((achievement, index) => (
                   <TimelineEvent key={index} {...achievement} />
                 ))}
@@ -241,12 +253,12 @@ export default function About() {
           
           <div>
             <div className="animate-on-scroll">
-              <div className="flex items-center gap-2 mb-6">
-                <GraduationCap className="text-primary" />
-                <h3 className="text-2xl font-bold">Education</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <GraduationCap className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
+                <h3 className="text-xl sm:text-2xl font-bold">Education</h3>
               </div>
               
-              <div className="relative mt-8">
+              <div className="relative mt-6 sm:mt-8">
                 {education.map((edu, index) => (
                   <TimelineEvent key={index} {...edu} />
                 ))}
@@ -254,35 +266,30 @@ export default function About() {
             </div>
 
             <div className="animate-on-scroll customTopPadding">
-              <div className="flex items-center gap-2 mb-6">
-                <GraduationCap className="text-primary" />
-                <h3 className="text-2xl font-bold">Work Study</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <GraduationCap className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
+                <h3 className="text-xl sm:text-2xl font-bold">Work Study</h3>
               </div>
               
-              <div className="relative mt-8">
+              <div className="relative mt-6 sm:mt-8">
                 {workStudy.map((edu, index) => (
                   <TimelineEvent key={index} {...edu} />
                 ))}
               </div>
-
-
             </div>
 
             <div className="animate-on-scroll customTopPadding">
-              <div className="flex items-center gap-2 mb-6">
-                <Award className="text-primary" />
-                <h3 className="text-2xl font-bold">Certifications</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <Award className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
+                <h3 className="text-xl sm:text-2xl font-bold">Certifications</h3>
               </div>
               
-              <div className="relative mt-8">
+              <div className="relative mt-6 sm:mt-8">
                 {certs.map((edu, index) => (
                   <TimelineEvent key={index} {...edu} />
                 ))}
               </div>
-
-
             </div>
-
           </div>
         </div>
       </div>

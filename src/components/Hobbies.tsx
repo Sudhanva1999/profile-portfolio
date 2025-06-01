@@ -243,7 +243,7 @@ export default function Hobbies() {
                   {hobbies[hobby].icon}
                 </div>
                 <span className={cn(
-                  "text-sm font-medium",
+                  "text-xs sm:text-sm font-medium",
                   activeHobby === hobby ? "text-primary" : "text-foreground/70"
                 )}>
                   {hobbies[hobby].title}
@@ -263,27 +263,31 @@ export default function Hobbies() {
           
           {/* Text section with social link button - modified for mobile responsiveness */}
           <div className="mt-6 p-4 bg-background/50 rounded-lg border border-border/20 animate-on-scroll">
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-xl font-medium mb-2">{hobbies[activeHobby].title}</h3>
-              <p className="text-foreground/80 mb-6">{hobbies[activeHobby].description}</p>
-              <a 
-                href={hobbies[activeHobby].socialLink.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors mt-4 md:mt-0 w-full md:w-auto max-w-xs"
-              >
-                {hobbies[activeHobby].socialLink.platform === 'instagram' ? (
-                  <>
-                    <img src="icons/instagram.svg" alt="instagram" className="blueFilter mr-2 w-5 h-5" />
-                    <span>Follow on Instagram</span>
-                  </>
-                ) : (
-                  <>
-                    <img src="https://cdn.worldvectorlogo.com/logos/youtube-icon-5.svg" alt="youtube" className="blueFilter mr-2 w-5 h-5" />
-                    <span>Watch on YouTube</span>
-                  </>
-                )}
-              </a>
+            <div className="flex flex-col">
+              <div className="text-left">
+                <h3 className="text-xl font-medium mb-2">{hobbies[activeHobby].title}</h3>
+                <p className="text-foreground/80 mb-6">{hobbies[activeHobby].description}</p>
+              </div>
+              <div className="flex justify-center">
+                <a 
+                  href={hobbies[activeHobby].socialLink.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors mt-4 md:mt-0 w-full md:w-auto max-w-xs"
+                >
+                  {hobbies[activeHobby].socialLink.platform === 'instagram' ? (
+                    <>
+                      <img src="icons/instagram.svg" alt="instagram" className="blueFilter mr-2 w-5 h-5" />
+                      <span>Follow on Instagram</span>
+                    </>
+                  ) : (
+                    <>
+                      <img src="https://cdn.worldvectorlogo.com/logos/youtube-icon-5.svg" alt="youtube" className="blueFilter mr-2 w-5 h-5" />
+                      <span>Watch on YouTube</span>
+                    </>
+                  )}
+                </a>
+              </div>
             </div>
           </div>
         </div>
