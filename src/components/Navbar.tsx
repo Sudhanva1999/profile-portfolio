@@ -1,119 +1,63 @@
-import { useState, useEffect, useContext, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon, BarChart2 } from 'lucide-react';
+import { useContext, useState } from 'react';
+import { Sun, Moon, Menu, X, Home, Briefcase, Award, FolderOpen, Code, Camera, Palette, Video, Users, Mail } from 'lucide-react';
 import { ThemeContext } from '@/contexts/ThemeContext';
-import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Hobbies', href: '#hobbies' },
-  { name: 'Contact', href: '#contact' },
-];
-
-export default function Navbar({ onShowAnalytics }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const bodyRef = useRef(document.body);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Handle scroll locking when menu is open
-  useEffect(() => {
-    const body = bodyRef.current;
-    
-    if (isMenuOpen) {
-      // Lock scroll when menu is open
-      body.style.overflow = 'hidden';
-    } else {
-      // Restore scroll when menu is closed
-      body.style.overflow = '';
+  const sections = [
+    { name: 'Home', icon: <Home className="w-5 h-5" />, index: 0 },
+    { name: 'Adobe', icon: <Briefcase className="w-5 h-5" />, index: 1 },
+    { name: 'Accenture', icon: <Briefcase className="w-5 h-5" />, index: 2 },
+    { name: 'Northeastern University', icon: <Briefcase className="w-5 h-5" />, index: 3 },
+    { name: 'Education', icon: <Award className="w-5 h-5" />, index: 4 },
+    { name: 'Achievements', icon: <Award className="w-5 h-5" />, index: 5 },
+    { name: 'Projects', icon: <FolderOpen className="w-5 h-5" />, index: 6 },
+    { name: 'Skills', icon: <Code className="w-5 h-5" />, index: 7 },
+    { name: 'Photography', icon: <Camera className="w-5 h-5" />, index: 8 },
+    { name: 'Painting', icon: <Palette className="w-5 h-5" />, index: 9 },
+    { name: '3D Animation', icon: <Video className="w-5 h-5" />, index: 10 },
+    { name: 'Socials', icon: <Users className="w-5 h-5" />, index: 11 },
+    { name: 'Contact Me', icon: <Mail className="w-5 h-5" />, index: 12 },
+  ];
+
+  const scrollToSection = (index: number) => {
+    const sectionElements = document.querySelectorAll('.snap-section');
+    if (sectionElements[index]) {
+      sectionElements[index].scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
     }
-    
-    // Cleanup function to ensure scroll is restored when component unmounts
-    return () => {
-      body.style.overflow = '';
-    };
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + 100;
-
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-        const sectionId = section.getAttribute('id') || '';
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
-        }
-      });
-
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  };
 
   return (
     <>
-      <header 
-        className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled ? 'py-2 glass-panel' : 'py-4 bg-transparent'
-        )}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-mono font-bold tracking-tighter">
-            <span className="text-gradient">{ '{ ' }</span> 
-            SUDHANVA PATURKAR 
-            <span className="text-gradient">{ ' }' }</span>
-          </Link>
+          {/* Left: Name only */}
+          <div className="text-xs md:text-lg font-mono font-bold tracking-tighter bg-background/50 backdrop-blur-sm px-2 py-1.5 md:px-3 md:py-2 rounded-full">
+            <span className="text-gradient">{'{ '}</span>
+            <span>SUDHANVA PATURKAR</span>
+            <span className="text-gradient">{' }'}</span>
+          </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={cn("nav-link", activeSection === link.href.slice(1) && "active")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const href = link.href.slice(1);
-                  const element = document.getElementById(href);
-                  if (element) {
-                    window.scrollTo({
-                      top: element.offsetTop - 80,
-                      behavior: 'smooth',
-                    });
-                  }
-                }}
-              >
-                {link.name}
-              </a>
-            ))}
-            
-            {/* Analytics Button */}
+          {/* Right: Menu & Theme Toggle */}
+          <div className="flex items-center gap-2">
             <button 
-              onClick={onShowAnalytics} 
-              className="nav-link flex items-center gap-1"
-              aria-label="Analytics"
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              className="bg-background/50 backdrop-blur-sm p-2 md:p-2.5 rounded-full hover:bg-background/80 transition-colors"
+              aria-label="Navigation menu"
             >
-              <BarChart2 className="w-4 h-4" />
-              <span>Analytics</span>
+              {isMenuOpen ? (
+                <X className="w-5 h-5 text-primary" />
+              ) : (
+                <Menu className="w-5 h-5 text-primary" />
+              )}
             </button>
-            
             <button 
               onClick={toggleTheme} 
-              className="ml-4 p-2 rounded-full hover:bg-background/80 transition-colors"
+              className="bg-background/50 backdrop-blur-sm p-2 md:p-2.5 rounded-full hover:bg-background/80 transition-colors"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -121,96 +65,54 @@ export default function Navbar({ onShowAnalytics }) {
               ) : (
                 <Moon className="w-5 h-5 text-primary" />
               )}
-            </button>
-          </nav>
-
-          {/* Mobile Nav Toggle */}
-          <div className="flex items-center md:hidden">
-            <button 
-              onClick={toggleTheme} 
-              className="mr-4 p-2 rounded-full hover:bg-background/80 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
-            </button>
-            <button 
-              onClick={toggleMenu}
-              className="p-2 rounded-md hover:bg-background/80 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Nav Menu - Completely separate from header to ensure full coverage */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-[9999] md:hidden" style={{ backgroundColor: theme === 'dark' ? '#0B0F19' : '#FFFFFF' }}>
-          <div className="h-full flex flex-col">
-            <div className="p-4 flex justify-end">
-              <button 
-                onClick={closeMenu}
-                className="p-2 rounded-md hover:bg-background/20 transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="flex-1 flex flex-col items-center justify-center space-y-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "text-xl py-2 px-4 rounded-md transition-colors", 
-                    activeSection === link.href.slice(1) 
-                      ? "text-blue-500 font-medium" 
-                      : theme === 'dark' ? "text-gray-300" : "text-gray-700"
-                  )}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const href = link.href.slice(1);
-                    const element = document.getElementById(href);
-                    if (element) {
-                      closeMenu();
-                      setTimeout(() => {
-                        window.scrollTo({
-                          top: element.offsetTop - 80,
-                          behavior: 'smooth',
-                        });
-                      }, 100);
-                    }
-                  }}
-                >
-                  {link.name}
-                </a>
-              ))}
-              
-              {/* Analytics Button on Mobile */}
-              <button
-                className={cn(
-                  "text-xl py-2 px-4 rounded-md transition-colors flex items-center gap-2", 
-                  theme === 'dark' ? "text-gray-300" : "text-gray-700"
-                )}
-                onClick={() => {
-                  closeMenu();
-                  setTimeout(() => {
-                    onShowAnalytics();
-                  }, 100);
-                }}
-              >
-                <BarChart2 className="w-5 h-5" />
-                <span>Analytics</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Navigation Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-background border-l border-border shadow-2xl overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-8 mt-12">
+                  <h2 className="text-2xl font-bold">Jump To</h2>
+                </div>
+
+                <nav className="space-y-2">
+                  {sections.map((section) => (
+                    <button
+                      key={section.index}
+                      onClick={() => scrollToSection(section.index)}
+                      className="w-full flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 transition-colors text-left group"
+                    >
+                      <div className="text-primary group-hover:scale-110 transition-transform">
+                        {section.icon}
+                      </div>
+                      <span className="font-medium text-base">{section.name}</span>
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

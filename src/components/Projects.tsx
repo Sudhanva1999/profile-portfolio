@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
-import ProjectCard from './ProjectCard';
-
+import ProjectGrid from './ProjectGrid';
 import './styles.css';
 
 interface Technology {
   name: string;
   icon: string;
-  strat?: "dark" | "light"; 
+  strat?: "dark" | "light";
 }
 
 interface Project {
@@ -18,13 +16,12 @@ interface Project {
   devpostUrl?: string;
   technologies: Technology[];
   isHackathonWinner?: boolean;
-  categories: ProjectCategory[];
+  categories: string[];
 }
 
-type ProjectCategory = 'All' | 'AI/Machine Learning' | 'Fullstack' | 'Cloud' | 'Gen AI/LLMs' ;
+type ProjectCategory = 'All' | 'AI/Machine Learning' | 'Fullstack' | 'Cloud' | 'Gen AI/LLMs';
 
 export default function Projects() {
-
   const allProjects: Project[] = [
     {
       title: 'DoubtStack',
@@ -61,7 +58,6 @@ export default function Projects() {
       ],
       categories: ['Fullstack'],
     },
-
     {
       title: 'Study Buddy',
       description: 'An AI-powered study assistant that transforms educational videos and documents into interactive learning tools. It extracts key insights to generate detailed notes, flashcards, and dynamic visual mind maps.',
@@ -162,7 +158,6 @@ export default function Projects() {
       ],
       categories: ['Fullstack'],
     },
-
     {
       title: 'Java Movie Review',
       description: 'A JAVA-REACT Communication POC that communicates via RESTful Apis.',
@@ -176,7 +171,6 @@ export default function Projects() {
       ],
       categories: ['Fullstack'],
     },
-
     {
       title: 'Client Host Multimedia Player',
       description: 'A multimedia player capable of controlling client multimedia players accross network and controls like play, pause and vloume controls.',
@@ -188,7 +182,6 @@ export default function Projects() {
       ],
       categories: ['Fullstack'],
     },
-
     {
       title: 'This Site !',
       description: 'This site made entirely using ReactJS and hosted on github pages.',
@@ -203,87 +196,27 @@ export default function Projects() {
       categories: ['Fullstack'],
     },
   ];
-  
-  // AI/Machine Learning projects
-  const aiProjects: Project[] = allProjects.filter(project => project.categories.includes('AI/Machine Learning'));
-  
-  // Fullstack projects
-  const fullstackProjects: Project[] = allProjects.filter(project => project.categories.includes('Fullstack'));
-  
-  // Cloud projects
-  const cloudProjects: Project[] = allProjects.filter(project => project.categories.includes('Cloud'));
-  
-  // Gen AI/LLMs projects
-  const genAiProjects: Project[] = allProjects.filter(project => project.categories.includes('Gen AI/LLMs'));
 
-  const tabs: ProjectCategory[] = ['All', 'AI/Machine Learning', 'Fullstack', 'Cloud', 'Gen AI/LLMs'];
-  
-  const [activeTab, setActiveTab] = useState<ProjectCategory>('All');
-  const [currentProjects, setCurrentProjects] = useState<Project[]>(allProjects);
-
-  const getProjectsForTab = (tab: ProjectCategory): Project[] => {
-    if (tab === 'All') {
-      return allProjects;
-    }
-    return allProjects.filter(project => project.categories.includes(tab));
-  };
-
-  useEffect(() => {
-    console.log("Active tab changed to:", activeTab);
-    const proj = getProjectsForTab(activeTab);
-    console.log("Projects for this tab:", proj.length);
-    setCurrentProjects(proj);
-  }, [activeTab]);
+  const categories: ProjectCategory[] = ['All', 'AI/Machine Learning', 'Fullstack', 'Cloud', 'Gen AI/LLMs'];
 
   return (
-    <section id="projects" className="section">
-      <div className="container mx-auto">
-        <div className="mb-8">
-          <h2 className="section-heading">My Projects</h2>
-        </div>
-
-        {/* Tabs */}
-        <div className="mb-10">
-          <div className="flex flex-wrap justify-center gap-2 border-b border-gray-200">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`
-                  px-5 py-3 text-sm font-medium transition-all duration-200 ease-in-out
-                  ${activeTab === tab 
-                    ? 'text-blue-400 border-b-2 border-blue-400 -mb-px' 
-                    : 'text-gray-400 hover:text-blue-300 dark:hover:text-white'}
-                `}
-              >
-                {tab}
-              </button>
-            ))}
+    <section id="projects" className="w-full h-screen flex flex-col items-center justify-center overflow-hidden py-16 md:py-0">
+      <div className="container mx-auto h-full flex flex-col max-h-full px-4 md:px-8">
+        {/* Title */}
+        <div className="flex-shrink-0 pt-3 md:pt-8 pb-2 md:pb-4">
+          <h2 className="section-heading text-xl sm:text-4xl mb-1 sm:mb-2">Explore My Projects</h2>
+          <div className="flex justify-center mb-2 sm:mb-3">
+            <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-full backdrop-blur-sm">
+              <span className="text-[10px] sm:text-xs font-medium text-foreground/80">
+                <span className="text-primary font-bold">{allProjects.length}</span> projects
+              </span>
+            </div>
           </div>
         </div>
-        
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {currentProjects.length > 0 ? (
-            currentProjects.map((project, index) => (
-              <ProjectCard 
-                key={`${project.title}-${index}-${activeTab}`}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                githubUrl={project.githubUrl}
-                liveUrl={project.liveUrl}
-                devpostUrl={project.devpostUrl}
-                technologies={project.technologies}
-                reversed={index % 2 !== 0}
-                isHackathonWinner={project.isHackathonWinner}
-              />
-            ))
-          ) : (
-            <div className="text-center py-16">
-              <p className="text-xl text-gray-600">No projects in this category yet.</p>
-            </div>
-          )}
+
+        {/* Project Grid */}
+        <div className="flex-1 min-h-0">
+          <ProjectGrid projects={allProjects} categories={categories} />
         </div>
       </div>
     </section>

@@ -16,6 +16,7 @@ interface HobbyCarouselProps {
   autoPlayInterval?: number;
   fitVertical?: boolean;
   hobbyKey?: string; // Add a unique key for each hobby (optional to prevent breaking existing code)
+  onSlideChange?: (index: number) => void; // Callback when slide changes
 }
 
 export default function HobbyCarousel({ 
@@ -23,16 +24,51 @@ export default function HobbyCarousel({
   autoPlay = true, 
   autoPlayInterval = 5000,
   fitVertical = false,
-  hobbyKey = 'default' // Default key if none provided
+  hobbyKey = 'default', // Default key if none provided
+  onSlideChange
 }: HobbyCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const timerRef = useRef<number | null>(null);
   
   // Reset currentIndex when hobbyKey changes
   useEffect(() => {
     setCurrentIndex(0);
+    onSlideChange?.(0);
   }, [hobbyKey]);
+
+  // Notify parent when slide changes
+  useEffect(() => {
+    onSlideChange?.(currentIndex);
+  }, [currentIndex, onSlideChange]);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      goToNextSlide();
+    } else if (isRightSwipe) {
+      goToPrevSlide();
+    }
+  };
 
   const goToSlide = (index: number) => {
     if (isTransitioning) return;
@@ -84,12 +120,15 @@ export default function HobbyCarousel({
   };
 
   return (
-    <div className="relative w-full animate-on-scroll">
+    <div className="relative w-full h-full">
       {/* Main carousel container */}
       <div 
-        className="relative w-full rounded-xl overflow-hidden aspect-video max-w-4xl mx-auto"
+        className="relative w-full h-full overflow-hidden"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         {/* Slides */}
         <div className="relative w-full h-full overflow-hidden">
@@ -108,12 +147,6 @@ export default function HobbyCarousel({
                       : "opacity-0 translate-x-full"
                 )}
               >
-                {/* Text overlay on desktop only */}
-                <div className="absolute top-0 left-0 right-0 p-6 bg-gradient-to-b from-black/80 to-transparent text-white z-20 hidden md:block">
-                  <h3 className="text-xl font-semibold mb-2">{slide.title}</h3>
-                  <p className="text-sm text-white/80">{slide.description}</p>
-                </div>
-
                 {/* YouTube embed handling */}
                 {slide.youtubeEmbed ? (
                   <iframe
@@ -159,43 +192,35 @@ export default function HobbyCarousel({
         {/* Controls */}
         <button
           onClick={goToPrevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors z-30"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-1.5 md:p-2 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors z-30"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={20} />
+          <ChevronLeft size={16} className="md:w-5 md:h-5" />
         </button>
         
         <button
           onClick={goToNextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors z-30"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-1.5 md:p-2 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors z-30"
           aria-label="Next slide"
         >
-          <ChevronRight size={20} />
+          <ChevronRight size={16} className="md:w-5 md:h-5" />
         </button>
         
-        {/* Indicators */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-30">
+        {/* Indicators - Hidden on mobile */}
+        <div className="hidden md:flex absolute bottom-2 md:bottom-4 left-1/2 -translate-x-1/2 space-x-1 md:space-x-2 z-30">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300",
-                index === currentIndex ? "bg-white w-4" : "bg-white/50"
+                "w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all duration-300",
+                index === currentIndex ? "bg-white w-3 md:w-4" : "bg-white/50"
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
       </div>
-      
-      {/* Mobile text container - shows below the carousel */}
-      {slides[currentIndex] && !slides[currentIndex].youtubeEmbed && (
-        <div className="md:hidden mt-4 p-4 bg-background/50 rounded-lg border border-border/20 max-w-4xl mx-auto">
-          <h3 className="text-lg font-semibold mb-2">{slides[currentIndex].title}</h3>
-          <p className="text-sm text-foreground/80">{slides[currentIndex].description}</p>
-        </div>
-      )}
     </div>
   );
 }

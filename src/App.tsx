@@ -7,25 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Analytics from "./pages/Analytics"; 
 import TypingLoader from "./components/TypingLoader";
-import { initAnalytics } from "./lib/analytics-init";
-
-
-const API_ENDPOINTS = {
-  development: {
-    saveUrl: 'http://localhost:3001/save-analytics',
-    summaryUrl: 'http://localhost:3001/get-analytics-summary'
-  },
-  production: {
-    saveUrl: 'https://cquvi9wdo3.execute-api.us-east-1.amazonaws.com/prod/analytics',
-    summaryUrl: 'https://cquvi9wdo3.execute-api.us-east-1.amazonaws.com/prod/analytics/summary'
-  }
-};
-
-// Get current environment
-const currentEnv = process.env.NODE_ENV || 'development';
-const endpoints = API_ENDPOINTS[currentEnv === 'production' ? 'production' : 'development'];
 
 const queryClient = new QueryClient();
 
@@ -34,19 +16,7 @@ const App = () => {
   
   useEffect(() => {
     const loadApp = async () => {
-      const analyticsEnabled = localStorage.getItem('analytics-enabled') !== 'false';
-      
-      if (analyticsEnabled) {
-        // Pass the appropriate endpoints based on the environment
-        initAnalytics(
-          true, // Always enable if the localStorage flag is true
-          endpoints
-        );
-        
-        console.log(`Analytics initialized in ${currentEnv} environment with endpoints:`, endpoints);
-      } else {
-        console.log("Analytics tracking is disabled");
-      }
+      // Analytics disabled
       
       const domLoaded = new Promise<void>(resolve => {
         if (document.readyState === 'complete') {

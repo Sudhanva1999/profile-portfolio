@@ -82,12 +82,12 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="glass-panel rounded-xl p-6 bg-gradient-to-br from-accent/5 to-primary/5">
-      <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+    <form onSubmit={handleSubmit} className="glass-panel rounded-lg md:rounded-xl p-4 md:p-6 bg-gradient-to-br from-accent/5 to-primary/5">
+      <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-6">Send a Message</h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-        <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-4">
+        <div className="space-y-1 md:space-y-2">
+          <Label htmlFor="name" className="text-xs md:text-sm">Name</Label>
           <Input
             id="name"
             name="name"
@@ -95,12 +95,12 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your name"
-            className="bg-background/50"
+            className="bg-background/50 h-8 md:h-10 text-sm"
           />
         </div>
         
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+        <div className="space-y-1 md:space-y-2">
+          <Label htmlFor="email" className="text-xs md:text-sm">Email</Label>
           <Input
             id="email"
             name="email"
@@ -109,13 +109,13 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="your.email@example.com"
-            className="bg-background/50"
+            className="bg-background/50 h-8 md:h-10 text-sm"
           />
         </div>
       </div>
       
-      <div className="mb-4 space-y-2">
-        <Label htmlFor="subject">Subject</Label>
+      <div className="mb-3 md:mb-4 space-y-1 md:space-y-2">
+        <Label htmlFor="subject" className="text-xs md:text-sm">Subject</Label>
         <Input
           id="subject"
           name="subject"
@@ -123,26 +123,26 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           placeholder="What's this about?"
-          className="bg-background/50"
+          className="bg-background/50 h-8 md:h-10 text-sm"
         />
       </div>
       
-      <div className="mb-6 space-y-2">
-        <Label htmlFor="message">Message</Label>
+      <div className="mb-4 md:mb-6 space-y-1 md:space-y-2">
+        <Label htmlFor="message" className="text-xs md:text-sm">Message</Label>
         <Textarea
           id="message"
           name="message"
-          rows={5}
+          rows={3}
           required
           value={formData.message}
           onChange={handleChange}
           placeholder="Your message here..."
-          className="bg-background/50 resize-none"
+          className="bg-background/50 resize-none text-sm md:text-base"
         />
       </div>
       
       {result && (
-        <div className="mb-4 text-sm font-medium">
+        <div className="mb-3 md:mb-4 text-xs md:text-sm font-medium">
           <p className={result.includes('Success') ? "text-green-500" : "text-red-500"}>
             {result}
           </p>
@@ -153,11 +153,11 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-5 py-2 bg-primary text-primary-foreground rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-70 ml-auto"
+          className="px-4 py-1.5 md:px-5 md:py-2 bg-primary text-primary-foreground rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-70 ml-auto text-sm md:text-base"
         >
           {isSubmitting ? 'Sending...' : (
             <>
-              <Send size={16} />
+              <Send size={14} className="md:w-4 md:h-4" />
               <span>Send Message</span>
             </>
           )}

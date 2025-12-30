@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
-import SkillCategory from './SkillCategory';
+import { useEffect, useContext } from 'react';
+import SkillsSphere from './SkillsSphere';
+import { ThemeContext } from '@/contexts/ThemeContext';
 
-// Add type definition to match what SkillCategory expects
+// Add type definition to match what SkillsSphere expects
 type Skill = {
   name: string;
   icon: string;
@@ -9,6 +10,8 @@ type Skill = {
 };
 
 export default function Skills() {
+  const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,7 +52,7 @@ export default function Skills() {
       { name: 'AngularJS', icon: 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg' },
       { name: 'NodeJS', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
       { name: 'ElectronJS', icon: 'https://cdn.worldvectorlogo.com/logos/electron-1.svg' },
-      { name: 'Flask', icon: 'https://cdn.worldvectorlogo.com/logos/flask.svg', strat: 'dark' },
+      { name: 'Flask', icon: 'icons/flask.png' },
       { name: 'Spring Boot', icon: 'https://cdn.worldvectorlogo.com/logos/spring-3.svg' },
     ],
     databases: [
@@ -57,12 +60,12 @@ export default function Skills() {
       { name: 'Oracle', icon: 'https://cdn.worldvectorlogo.com/logos/oracle-6.svg' },
       { name: 'MongoDB', icon: 'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg' },
       { name: 'Google Firestore', icon: 'https://cdn.worldvectorlogo.com/logos/firebase-1.svg' },
-      { name: 'Amazon S3', icon: 'https://cdn.worldvectorlogo.com/logos/amazon-s3.svg', strat: 'dark' },
+      { name: 'Amazon S3', icon: 'icons/amazonS3.png' },
     ],
     other: [
       { name: 'Agile', icon: 'https://cdn.worldvectorlogo.com/logos/agile-software.svg', strat: 'dark' },
       { name: 'Git', icon: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg' },
-      { name: 'AWS', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', strat: 'dark' },
+      { name: 'AWS', icon: theme === 'dark' ? 'icons/aws-dark.png' : 'icons/aws-light.png' },
       { name: 'Jira', icon: 'https://cdn.worldvectorlogo.com/logos/jira-1.svg' },
       { name: 'Bootstrap', icon: 'https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg' },
       { name: 'OpenCV', icon: 'icons/opencv.png' },
@@ -70,17 +73,14 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="section">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 md:mb-16 animate-on-scroll">
+    <section id="skills" className="w-full h-screen flex items-center justify-center pt-6 pb-4 md:py-20">
+      <div className="container mx-auto px-8 md:px-12">
+        <div className="mb-6 md:mb-8 animate-on-scroll">
           <h2 className="section-heading">Skills</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <SkillCategory title="Languages" skills={skills.languages} delay={100} />
-          <SkillCategory title="Frameworks" skills={skills.frameworks} delay={200} />
-          <SkillCategory title="Databases" skills={skills.databases} delay={300} />
-          <SkillCategory title="Other" skills={skills.other} delay={400} />
+        <div className="animate-on-scroll">
+          <SkillsSphere skills={skills} />
         </div>
       </div>
     </section>
