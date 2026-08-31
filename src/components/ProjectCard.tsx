@@ -1,4 +1,4 @@
-import { Github, Globe, ArrowUpRight, ExternalLink, Star, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, Globe, ArrowUpRight, ExternalLink, Star, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { useContext, useState } from 'react';
@@ -22,6 +22,7 @@ interface ProjectCardProps {
   technologies: Technology[];
   reversed?: boolean;
   isHackathonWinner?: boolean;
+  isFeatured?: boolean;
 }
 
 export default function ProjectCard({
@@ -34,6 +35,7 @@ export default function ProjectCard({
   technologies,
   reversed = false,
   isHackathonWinner = false,
+  isFeatured = false,
 }: ProjectCardProps) {
   const { theme } = useContext(ThemeContext);
   const isDarkMode = theme === 'dark';
@@ -53,6 +55,12 @@ export default function ProjectCard({
         <div className="absolute top-1.5 right-1.5 z-10 flex items-center gap-1 px-2 py-0.5 bg-primary/90 text-primary-foreground rounded-full text-[9px] font-medium shadow-md">
           <Star size={10} className="fill-current" />
           <span>Winner</span>
+        </div>
+      )}
+      {isFeatured && !isHackathonWinner && (
+        <div className="absolute top-1.5 right-1.5 z-10 flex items-center gap-1 px-2 py-0.5 bg-primary/90 text-primary-foreground rounded-full text-[9px] font-medium shadow-md">
+          <Sparkles size={10} className="fill-current" />
+          <span>Featured</span>
         </div>
       )}
       <CardContent className="p-0 flex flex-col h-full">

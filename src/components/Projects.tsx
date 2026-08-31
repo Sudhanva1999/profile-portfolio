@@ -16,6 +16,7 @@ interface Project {
   devpostUrl?: string;
   technologies: Technology[];
   isHackathonWinner?: boolean;
+  isFeatured?: boolean;
   categories: string[];
 }
 
@@ -24,13 +25,29 @@ type ProjectCategory = 'All' | 'AI/Machine Learning' | 'Fullstack' | 'Cloud' | '
 export default function Projects() {
   const allProjects: Project[] = [
     {
+      title: 'CatanCards',
+      description: 'A companion app for in-person Catan, and an agentic harness that lets an LLM fill empty seats. Bots run a guarded decision loop against a local model, choosing only from actions the runtime proves legal, with a deterministic fallback and an offline evaluation harness that scores each run.',
+      image: 'images/project/catancards.jpg',
+      githubUrl: 'https://github.com/Sudhanva1999/CatanCards',
+      liveUrl: 'https://catan.sudhanvadev.us',
+      isFeatured: true,
+      technologies: [
+        { name: 'Node.js', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
+        { name: 'JavaScript', icon: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg' },
+        { name: 'Socket.IO', icon: 'https://cdn.worldvectorlogo.com/logos/socket-io.svg' },
+        { name: 'Ollama', icon: 'icons/ollama.svg', strat: 'dark' },
+        { name: 'Google Gemini', icon: 'icons/gemini.png' },
+      ],
+      categories: ['Gen AI/LLMs', 'AI/Machine Learning', 'Fullstack'],
+    },
+    {
       title: 'DoubtStack',
       description: 'A doubt-solving forum using the MERN stack, complete with a robust testing suite and Docker containerization, ensuring seamless deployment.',
       image: 'images/project/doubtStack.png',
       githubUrl: 'https://github.com/Sudhanva1999/DockerDoubtStack',
       technologies: [
         { name: 'MongoDB', icon: 'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg' },
-        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
+        { name: 'React', icon: 'icons/react.svg' },
         { name: 'Node.js', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
         { name: 'Docker', icon: 'https://cdn.worldvectorlogo.com/logos/docker.svg' },
         { name: 'MUI', icon: 'https://cdn.worldvectorlogo.com/logos/material-ui-1.svg' },
@@ -45,7 +62,7 @@ export default function Projects() {
       technologies: [
         { name: 'Python', icon: 'https://cdn.worldvectorlogo.com/logos/python-5.svg' },
         { name: 'AWS Bedrock', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg', strat: 'dark' },
-        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
+        { name: 'React', icon: 'icons/react.svg' },
       ],
       categories: ['Fullstack', 'Gen AI/LLMs', 'Cloud'],
     },
@@ -60,16 +77,17 @@ export default function Projects() {
     },
     {
       title: 'Study Buddy',
-      description: 'An AI-powered study assistant that transforms educational videos and documents into interactive learning tools. It extracts key insights to generate detailed notes, flashcards, and dynamic visual mind maps.',
+      description: 'An AI study platform that turns unstructured PDFs and video transcripts into mind maps, study schedules and topic breakdowns. A LangGraph fan-out and gather graph runs a specialized agent per output type concurrently, and an evaluation pass validates every generation before it reaches the user.',
       image: 'images/project/study.png',
       githubUrl: 'https://github.com/Sudhanva1999/StudyBuddyHackathon',
       devpostUrl: 'https://devpost.com/software/studybuddy-ly7g2z',
       isHackathonWinner: true,
       technologies: [
+        { name: 'LangGraph', icon: 'icons/langgraph.svg', strat: 'dark' },
+        { name: 'Google Gemini', icon: 'icons/gemini.png' },
+        { name: 'React', icon: 'icons/react.svg' },
+        { name: 'Node.js', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
         { name: 'Python', icon: 'https://cdn.worldvectorlogo.com/logos/python-5.svg' },
-        { name: 'MongoDB', icon: 'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg' },
-        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
-        { name: 'Google Gemeni', icon: 'https://cdn.worldvectorlogo.com/logos/google-bard-1.svg' },
       ],
       categories: ['AI/Machine Learning', 'Gen AI/LLMs', 'Fullstack'],
     },
@@ -166,7 +184,7 @@ export default function Projects() {
       technologies: [
         { name: 'Java', icon: 'https://cdn.worldvectorlogo.com/logos/java-4.svg' },
         { name: 'Bootstrap', icon: 'https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg' },
-        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
+        { name: 'React', icon: 'icons/react.svg' },
         { name: 'MongoDB', icon: 'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg' },
       ],
       categories: ['Fullstack'],
@@ -177,7 +195,7 @@ export default function Projects() {
       image: 'images/project/player.png',
       technologies: [
         { name: 'Python', icon: 'https://cdn.worldvectorlogo.com/logos/python-5.svg' },
-        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
+        { name: 'React', icon: 'icons/react.svg' },
         { name: 'Javascript', icon: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg' },
       ],
       categories: ['Fullstack'],
@@ -188,7 +206,7 @@ export default function Projects() {
       image: 'images/project/site.png',
       liveUrl: 'https://sudhanvapaturkar.com/',
       technologies: [
-        { name: 'React', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
+        { name: 'React', icon: 'icons/react.svg' },
         { name: 'HTML', icon: 'https://cdn.worldvectorlogo.com/logos/html-1.svg' },
         { name: 'CSS', icon: 'https://cdn.worldvectorlogo.com/logos/css-3.svg' },
         { name: 'Github', icon: 'https://cdn.worldvectorlogo.com/logos/github-icon.svg', strat: 'dark' },

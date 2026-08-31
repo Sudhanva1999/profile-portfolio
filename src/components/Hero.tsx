@@ -112,7 +112,7 @@ export default function Hero({ onOpenChat }: HeroProps) {
     },
   ];
 
-  const fullDescription = `I am Sudhanva Paturkar, a Software Engineer at Adobe with a Master's degree in Computer Science from Northeastern University's Khoury College. With expertise in full-stack development and a passion for GenAI and LLMs, I specialize in building scalable document processing solutions. My experience spans from developing high-performance systems to creating innovative AI-powered applications. Explore my projects and feel free to connect with me on my socials!`;
+  const fullDescription = `I am Sudhanva Paturkar, a Software Engineer II at Adobe with a Master's degree in Computer Science from Northeastern University's Khoury College. I work full-stack across React and TypeScript frontends and Java/Spring Boot services, building generative-AI features in Acrobat and the document surfaces around them. Alongside that I build agentic systems: LLM agent loops with guardrails, structured-output validation, and evaluation harnesses. Explore my projects and feel free to connect with me on my socials!`;
 
   return (
     <section id="home" className="w-full h-screen flex items-center justify-center pt-6 pb-4 md:py-0">
@@ -143,7 +143,7 @@ export default function Hero({ onOpenChat }: HeroProps) {
               <span className="text-primary font-semibold">
                 Sudhanva Paturkar
               </span>
-              , a Software Engineer at Adobe with a Master's degree in Computer Science from Northeastern University's Khoury College. With expertise in full-stack development and a passion for GenAI and LLMs, I specialize in building scalable document processing solutions. My experience spans from developing high-performance systems to creating innovative AI-powered applications. Explore my projects and feel free to connect with me on my socials!
+              , a Software Engineer II at Adobe with a Master's degree in Computer Science from Northeastern University's Khoury College. I work full-stack across React and TypeScript frontends and Java/Spring Boot services, building generative-AI features in Acrobat and the document surfaces around them. Alongside that I build agentic systems: LLM agent loops with guardrails, structured-output validation, and evaluation harnesses. Explore my projects and feel free to connect with me on my socials!
             </p>
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
@@ -174,7 +174,7 @@ export default function Hero({ onOpenChat }: HeroProps) {
             <a
               target="_blank"
               href="files/resume.pdf"
-              download
+              download="Sudhanva_Paturkar_Resume.pdf"
               className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full transition-colors duration-300 text-sm md:text-base"
             >
               <Download className="w-3 h-3 md:w-4 md:h-4" />

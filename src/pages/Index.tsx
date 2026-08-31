@@ -41,12 +41,12 @@ const Index = () => {
 
   const adobeExperience = [
     {
-      title: 'Software Engineer',
+      title: 'Software Engineer II',
       company: 'Adobe',
       date: 'May 2025 - Present',
-      description: 'As a Software Engineer at Adobe, I am working on developing and maintaining critical components of Adobe\'s document processing solutions. My role involves collaborating with cross-functional teams to design and implement scalable features, optimize system performance, and ensure high-quality code delivery. I am actively contributing to the enhancement of Adobe\'s document processing capabilities while maintaining a strong focus on user experience and system reliability.',
+      description: 'I build product features in Adobe Acrobat across React and TypeScript frontends. I built the frontend surfaces for AI Voice Over, a generative-AI feature, and worked with the routing and agent teams on its agent integration, handling asynchronous, long-running agent execution on the client. I built the quizzes, flashcards and study packet components behind Study Spaces inside the Jot editor library that renders note documents, and developed an end-to-end extensible toolbar for that editor, including the APIs it exposes across mobile, desktop and web. I also lead frontend development for feature discovery in Acrobat Web and instrumented it with the Adobe Analytics SDK to measure its rollout.',
       icon: <img src="icons/adobe.png" alt={"Adobe Icon"} />,
-      technologies: ['Java', 'Spring Boot', 'React', 'Microservices', 'Cloud Architecture', 'System Design', 'Performance Optimization', 'Code Quality', 'Team Collaboration'],
+      technologies: ['React', 'TypeScript', 'Generative AI', 'Agent Integration', 'JavaScript', 'Adobe Analytics', 'Frontend Architecture'],
       button: {
         text: 'View Employer',
         link: 'https://www.adobe.com'
@@ -55,10 +55,10 @@ const Index = () => {
     {
       title: 'Software Engineering Intern',
       company: 'Adobe',
-      date: 'Jun 2023 - Aug 2023',
-      description: 'At Adobe, I spearheaded key initiatives that enhanced user engagement and streamlined data processing. I developed a personalized notification system for Adobe Acrobat that leveraged user data to drive a 10% increase in feature usage, creating a robust Java Spring-Boot service capable of processing millions of logs for comprehensive user profiles. I designed and implemented an Apache Kafka pipeline to establish efficient data flows between high-volume services handling millions of records, laying groundwork for more responsive and scalable systems. By integrating GraphQL to streamline data retrieval for personalized notifications, I achieved a 30% improvement in fetch times.',
+      date: 'Jun 2024 - Aug 2024',
+      description: 'I built a personalized, user-data-driven notification system for Adobe Acrobat in Java and Spring Boot that analyzed behavior patterns and increased targeted feature adoption by 15% through customized in-app messaging. I contributed to a Spring Boot microservice processing over 5 million daily log entries with batch processing and multi-threading to generate the user behavior profiles powering the personalization engine, and worked with Apache Kafka pipelines, writing custom producers and consumers to stream data in real time between distributed services.',
       icon: <img src="icons/adobe.png" alt={"Adobe Icon"} />,
-      technologies: ['Java', 'Spring Boot', 'Apache Kafka', 'GraphQL', 'Data processing', 'Scalable systems'],
+      technologies: ['Java', 'Spring Boot', 'Apache Kafka', 'Batch Processing', 'Multi-threading', 'Personalization'],
       button: {
         text: 'View Employer',
         link: 'https://www.adobe.com'
@@ -70,8 +70,8 @@ const Index = () => {
     {
       title: 'Senior Fullstack Developer',
       company: 'Accenture',
-      date: 'Nov 2022 - May 2023',
-      description: 'During my time at Accenture, I worked as a consultant with Adobe on their Acrobat Sign product. I significantly improved document processing capabilities and application performance by optimizing API polling, achieving a 5% reduction in page load times for a smoother user experience. I developed image processing algorithms to dynamically generate dark mode versions of signature images, enhancing our web applications visual appeal.',
+      date: 'Dec 2022 - May 2023',
+      description: 'I worked as a consultant with Adobe on their Acrobat Sign product. I integrated in-house AI document-processing APIs into the React frontend and rendered their analysis and extraction results in the product UI. I designed and implemented automated test suites with JUnit4 for backend Java services and Selenium WebDriver for React components, reaching 85% code coverage and a 20% decrease in production regressions, and improved application performance by optimizing async API polling.',
       icon: <img src="icons/accenture.png" alt={"Accenture Icon"} className="aboutIcons" />,
       technologies: ['API polling', 'Image processing algorithms', 'JUnit4', 'Selenium', 'AI-powered document processing', 'React'],
       button: {
@@ -83,7 +83,7 @@ const Index = () => {
       title: 'Full-stack Developer',
       company: 'Accenture',
       date: 'Jun 2021 - Nov 2022',
-      description: 'As a Full-stack developer at Accenture, I worked with Adobe on their document processing solutions and system performance improvements. I refined the document signing platform, resolving 24 customer-reported issues to enhance product stability. My technical expertise was recognized with the Accenture Pinnacle Award for outstanding contributions to Product Engineering in FY22-Q4.',
+      description: 'I worked with Adobe on their document processing solutions. I built document-processing API functionality covering PDF manipulation, digital signature verification and document versioning, along with Splunk dashboards to monitor API performance and system health. I resolved critical customer-reported defects in the enterprise document-signing platform and drove performance work spanning query optimization and caching. My contributions were recognized with the Accenture Pinnacle Award for Product Engineering in FY22-Q4.',
       icon: <img src="icons/accenture.png" alt={"Accenture Icon"} className="aboutIcons" />,
       technologies: ['Document processing', 'Amazon Elastic-Search', 'Splunk', 'Real-time monitoring', 'Performance optimization'],
       button: {

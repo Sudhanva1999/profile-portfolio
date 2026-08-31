@@ -48,8 +48,8 @@ export default function Skills() {
       { name: 'CSS', icon: 'https://cdn.worldvectorlogo.com/logos/css-3.svg' },
     ],
     frameworks: [
-      { name: 'ReactJS', icon: 'https://cdn.worldvectorlogo.com/logos/react-2.svg' },
-      { name: 'AngularJS', icon: 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg' },
+      { name: 'ReactJS', icon: 'icons/react.svg' },
+      { name: 'AngularJS', icon: 'icons/angular.svg' },
       { name: 'NodeJS', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
       { name: 'ElectronJS', icon: 'https://cdn.worldvectorlogo.com/logos/electron-1.svg' },
       { name: 'Flask', icon: 'icons/flask.png' },

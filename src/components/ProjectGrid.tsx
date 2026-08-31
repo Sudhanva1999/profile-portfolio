@@ -19,6 +19,7 @@ interface Project {
   devpostUrl?: string;
   technologies: Technology[];
   isHackathonWinner?: boolean;
+  isFeatured?: boolean;
   categories: string[];
 }
 
@@ -257,6 +258,11 @@ function ProjectCard({ project, index, isFocused, onFocus, onBlur, isAnyFocused 
               Winner
             </div>
           )}
+          {project.isFeatured && !project.isHackathonWinner && (
+            <div className="absolute top-2 right-2 px-2 py-0.5 bg-primary/90 text-primary-foreground rounded-full text-[8px] font-medium">
+              Featured
+            </div>
+          )}
         </div>
 
         {/* Title */}
@@ -312,6 +318,12 @@ function ProjectCard({ project, index, isFocused, onFocus, onBlur, isAnyFocused 
                 <div className="absolute top-3 left-3 px-3 py-1 bg-primary/90 text-primary-foreground rounded-full text-xs font-medium flex items-center gap-1">
                   <span>🏆</span>
                   <span>Hackathon Winner</span>
+                </div>
+              )}
+              {project.isFeatured && !project.isHackathonWinner && (
+                <div className="absolute top-3 left-3 px-3 py-1 bg-primary/90 text-primary-foreground rounded-full text-xs font-medium flex items-center gap-1">
+                  <span>✨</span>
+                  <span>Featured</span>
                 </div>
               )}
 
